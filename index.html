@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#302151">
-<meta name="description" content="Discover The Slimming Iron and its official product presentation.">
+<meta name="description" content="Discover The Slimming Iron and watch the official rotating product presentation.">
 <title>The Slimming Iron | Official Website</title>
 
 <style>
@@ -29,22 +29,28 @@ html {
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--text);
   background: white;
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
 
-img, video {
+img,
+video {
   display: block;
   max-width: 100%;
 }
 
-h1, h2, h3, p {
+h1,
+h2,
+h3,
+p {
   margin-top: 0;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 400;
 }
@@ -59,8 +65,8 @@ a {
 }
 
 button {
-  font: inherit;
   cursor: pointer;
+  font: inherit;
 }
 
 button:focus-visible,
@@ -112,7 +118,7 @@ summary:focus-visible {
   border-color: white;
 }
 
-/* TOP HEADER */
+/* HEADER */
 
 .announcement {
   background: var(--purple);
@@ -192,9 +198,7 @@ summary:focus-visible {
   padding: 12px 15px;
 }
 
-/* =========================================
-   MAIN HERO IMAGE
-========================================= */
+/* MAIN HERO IMAGE */
 
 .hero {
   position: relative;
@@ -225,8 +229,8 @@ summary:focus-visible {
   inset: 0;
   align-items: center;
   justify-content: center;
-  text-align: center;
   padding: 30px;
+  text-align: center;
   background: linear-gradient(135deg, #eee4f2, #bca2d0);
   color: var(--purple);
 }
@@ -235,25 +239,24 @@ summary:focus-visible {
   font-size: clamp(30px, 5vw, 60px);
 }
 
-/* =========================================
-   ROTATING SLIMMING IRON
-   POSITIONED ON THE LEFT PODIUM
-========================================= */
+/* ROTATING PRODUCT CENTERED ON LEFT PODIUM */
 
 .hero-product-overlay {
   position: absolute;
 
   /*
-    Position the video product on the
-    raised display podium at the left.
-    Percentages scale with the hero image.
+    The overlay is centered above the
+    small podium on the left side.
+    The positioning is relative to
+    the entire hero image.
   */
 
-  left: 1%;
-  top: 29%;
-  width: 30%;
-
+  left: 13%;
+  top: 49%;
+  width: 25%;
   aspect-ratio: 16 / 9;
+
+  transform: translate(-50%, -50%);
 
   z-index: 4;
   background: transparent;
@@ -272,7 +275,7 @@ summary:focus-visible {
   mix-blend-mode: normal;
 }
 
-/* Video supplies animation frames */
+/* Hidden source video */
 
 .hero-product-overlay video {
   position: absolute;
@@ -282,19 +285,19 @@ summary:focus-visible {
   pointer-events: none;
 }
 
-/* VIDEO BUTTONS */
+/* VIDEO CONTROLS */
 
 .hero-video-controls {
   position: absolute;
-  left: 8%;
-  bottom: 8%;
+  left: 6%;
+  bottom: 6%;
   display: flex;
   gap: 7px;
   z-index: 6;
 }
 
 .hero-video-controls button {
-  background: rgba(48,33,81,.85);
+  background: rgba(48, 33, 81, .85);
   color: white;
   border: 1px solid rgba(255,255,255,.45);
   padding: 8px 13px;
@@ -370,7 +373,7 @@ summary:focus-visible {
   max-width: 310px;
 }
 
-/* LIFESTYLE SECTION */
+/* LIFESTYLE */
 
 .lifestyle {
   display: grid;
@@ -413,7 +416,7 @@ summary:focus-visible {
   margin: 0;
 }
 
-/* PRODUCT SECTION */
+/* PRODUCT FEATURE */
 
 .product-feature {
   display: grid;
@@ -752,20 +755,18 @@ details p {
     aspect-ratio: 16 / 9;
   }
 
-  /*
-    Keep the rotating product on the
-    podium at smaller screen sizes.
-  */
+  /* KEEP PRODUCT CENTERED ON LEFT PODIUM */
 
   .hero-product-overlay {
-    left: 1%;
-    top: 29%;
-    width: 30%;
+    left: 13%;
+    top: 49%;
+    width: 25%;
+    transform: translate(-50%, -50%);
   }
 
   .hero-video-controls {
-    left: 4%;
-    bottom: 4%;
+    left: 3%;
+    bottom: 3%;
     gap: 4px;
   }
 
@@ -876,7 +877,7 @@ details p {
 
 <main>
 
-<!-- MAIN HERO WITH ROTATING PRODUCT ON PODIUM -->
+<!-- HERO IMAGE WITH PRODUCT CENTERED OVER LEFT PODIUM -->
 
 <section class="hero" id="home">
   <div class="hero-picture">
@@ -884,7 +885,7 @@ details p {
     <img
       id="heroMainImage"
       src="hero-main.png"
-      alt="The Slimming Iron luxury studio image"
+      alt="The Slimming Iron luxury studio product image"
       loading="eager"
       fetchpriority="high"
     >
@@ -901,8 +902,6 @@ details p {
         </p>
       </div>
     </div>
-
-    <!-- ROTATING PRODUCT ON LEFT PODIUM -->
 
     <div class="hero-product-overlay">
 
@@ -924,7 +923,7 @@ details p {
         id="transparentProductCanvas"
         width="480"
         height="270"
-        aria-label="Rotating Slimming Iron"
+        aria-label="Rotating Slimming Iron with transparent background"
       ></canvas>
 
     </div>
@@ -933,6 +932,7 @@ details p {
       <button id="videoPlay" type="button">
         Pause
       </button>
+
       <button id="videoMute" type="button">
         Unmute
       </button>
@@ -1172,7 +1172,7 @@ details p {
   </div>
 </section>
 
-<!-- SECOND VIDEO SECTION -->
+<!-- SECOND VIDEO -->
 
 <section class="demo" id="demo">
 
@@ -1376,7 +1376,7 @@ navigation.querySelectorAll("a").forEach(function(link) {
   });
 });
 
-/* MAIN IMAGE ERROR */
+/* MAIN IMAGE ERROR HANDLING */
 
 const heroMainImage =
   document.getElementById("heroMainImage");
@@ -1398,10 +1398,7 @@ if (
   showHeroFallback();
 }
 
-/* ======================================
-   TRANSPARENT PRODUCT VIDEO
-   ON THE LEFT PODIUM
-====================================== */
+/* TRANSPARENT ROTATING PRODUCT */
 
 const heroVideo =
   document.getElementById("heroVideo");
@@ -1409,10 +1406,9 @@ const heroVideo =
 const canvas =
   document.getElementById("transparentProductCanvas");
 
-const ctx =
-  canvas.getContext("2d", {
-    willReadFrequently: true
-  });
+const ctx = canvas.getContext("2d", {
+  willReadFrequently: true
+});
 
 const videoPlay =
   document.getElementById("videoPlay");
@@ -1432,10 +1428,10 @@ let animationTimer = null;
 
 /*
   Remove only near-white pixels connected
-  to the edges of each video frame.
+  to the outer edges of the video.
 
-  Keep the product's interior white surfaces
-  opaque rather than fading the entire video.
+  This aims to keep white parts of the
+  Slimming Iron visible and opaque.
 */
 
 function isWhite(data, offset) {
@@ -1455,7 +1451,6 @@ function isWhite(data, offset) {
 function removeBackground(frame) {
   const data = frame.data;
   const count = W * H;
-
   const seen = new Uint8Array(count);
   const queue = new Int32Array(count);
 
@@ -1582,11 +1577,10 @@ videoMute.addEventListener("click", function() {
     heroVideo.muted ? "Unmute" : "Mute";
 });
 
-/* MISSING PRODUCT IMAGES */
+/* OTHER IMAGE ERROR HANDLING */
 
 document.querySelectorAll(".photo-panel img")
   .forEach(function(image) {
-
     function hideMissing() {
       image.style.display = "none";
     }
