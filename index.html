@@ -92,9 +92,9 @@ summary:focus-visible {
   justify-content: center;
   min-height: 54px;
   padding: 16px 32px;
+  border: 1px solid var(--purple);
   background: var(--purple);
   color: white;
-  border: 1px solid var(--purple);
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 1.5px;
@@ -193,13 +193,12 @@ summary:focus-visible {
   padding: 12px 15px;
 }
 
-/* MAIN HERO IMAGE */
+/* MAIN HERO */
 
 .hero {
-  position: relative;
   width: 100%;
   overflow: hidden;
-  background: var(--purple);
+  background: #302151;
 }
 
 .hero-picture {
@@ -214,7 +213,6 @@ summary:focus-visible {
   position: absolute;
   inset: 0;
   z-index: 1;
-  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -229,94 +227,77 @@ summary:focus-visible {
   align-items: center;
   justify-content: center;
   padding: 30px;
-  text-align: center;
   color: white;
+  text-align: center;
   background: linear-gradient(135deg, #302151, #745382);
 }
 
 /*
-  HERO ROTATING PRODUCT
+  ROTATING PRODUCT ON LEFT MARBLE PODIUM
 
-  The video itself remains fully opaque.
+  The canvas has a transparent background,
+  but the device itself remains solid.
 
-  The canvas removes selected background
-  pixels without changing the opacity of
-  the entire product.
-
-  No multiply, screen, or overlay blending.
+  No blending.
+  No whole-video transparency.
 */
 
 .hero-product-overlay {
   position: absolute;
-  left: 0%;
+  left: 0;
   top: 16%;
   width: 54%;
   aspect-ratio: 16 / 9;
   z-index: 4;
 
-  margin: 0;
-  padding: 0;
-
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-
   background: transparent;
-
+  border: 0;
+  box-shadow: none;
   overflow: visible;
   pointer-events: none;
 
-  opacity: 1;
-  mix-blend-mode: normal;
+  opacity: 1 !important;
+  mix-blend-mode: normal !important;
+  filter: none !important;
 }
 
-.hero-product-overlay canvas {
+#productCanvas {
   display: block;
   width: 100%;
   height: 100%;
-
   background: transparent;
 
-  opacity: 1;
-  mix-blend-mode: normal;
+  opacity: 1 !important;
+  mix-blend-mode: normal !important;
+  filter: none !important;
 }
 
-.hero-product-overlay video {
+#heroVideo {
   position: absolute;
   left: -9999px;
-  top: 0;
-
   width: 2px;
   height: 2px;
-
   pointer-events: none;
 }
 
-/* VIDEO CONTROLS */
+/* HERO VIDEO CONTROLS */
 
 .hero-video-controls {
   position: absolute;
   left: 19%;
   bottom: 5%;
   z-index: 6;
-
   display: flex;
   gap: 8px;
 }
 
 .hero-video-controls button {
-  background: rgba(48, 33, 81, .9);
+  background: rgba(48,33,81,.9);
   color: white;
-
   border: 1px solid rgba(255,255,255,.5);
   border-radius: 4px;
-
   padding: 8px 13px;
   font-size: 11px;
-}
-
-.hero-video-controls button:hover {
-  background: var(--purple);
 }
 
 /* INTRODUCTION */
@@ -329,7 +310,7 @@ summary:focus-visible {
 
 .intro h1 {
   color: var(--purple);
-  font-size: clamp(44px, 6vw, 83px);
+  font-size: clamp(44px,6vw,83px);
   line-height: 1.1;
   margin-bottom: 28px;
 }
@@ -345,7 +326,7 @@ summary:focus-visible {
   font-size: 18px;
 }
 
-/* IMAGE PANELS */
+/* PHOTO PANELS */
 
 .photo-panel {
   position: relative;
@@ -357,11 +338,8 @@ summary:focus-visible {
   position: absolute;
   inset: 0;
   z-index: 2;
-
-  display: block;
   width: 100%;
   height: 100%;
-
   object-fit: cover;
   object-position: center;
 }
@@ -370,30 +348,27 @@ summary:focus-visible {
   position: absolute;
   inset: 0;
   z-index: 1;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   padding: 30px;
   text-align: center;
-
   color: var(--purple);
-  background: linear-gradient(145deg, #efe4f1, #bd9ed1);
+  background: linear-gradient(145deg,#efe4f1,#bd9ed1);
 }
 
 .image-placeholder h3 {
-  font-size: clamp(26px, 3vw, 42px);
+  font-size: clamp(26px,3vw,42px);
   margin-bottom: 12px;
 }
 
 .image-placeholder p {
-  font-size: 13px;
   max-width: 310px;
+  font-size: 13px;
 }
 
-/* LIFESTYLE SECTION */
+/* LIFESTYLE */
 
 .lifestyle {
   display: grid;
@@ -409,8 +384,8 @@ summary:focus-visible {
 .lifestyle-copy {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
+  justify-content: center;
   padding: 85px 10%;
 }
 
@@ -420,7 +395,7 @@ summary:focus-visible {
   margin-bottom: 24px;
 }
 
-/* PROMOTIONAL BANNER */
+/* BANNER */
 
 .promo-banner {
   padding: 35px 20px;
@@ -431,7 +406,7 @@ summary:focus-visible {
 
 .promo-banner p {
   font-family: Georgia, serif;
-  font-size: clamp(22px, 3vw, 36px);
+  font-size: clamp(22px,3vw,36px);
   line-height: 1.4;
   margin: 0;
 }
@@ -448,8 +423,8 @@ summary:focus-visible {
 .product-copy {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
+  justify-content: center;
   padding: 90px 11%;
 }
 
@@ -469,7 +444,7 @@ summary:focus-visible {
   padding: 35px;
 }
 
-/* EDITORIAL SECTION */
+/* EDITORIAL */
 
 .statement {
   padding: 110px 6%;
@@ -479,7 +454,7 @@ summary:focus-visible {
 
 .statement h2 {
   color: var(--deep);
-  font-size: clamp(43px, 7vw, 100px);
+  font-size: clamp(43px,7vw,100px);
   line-height: 1.05;
 }
 
@@ -503,8 +478,8 @@ summary:focus-visible {
 .spa-copy {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
+  justify-content: center;
   padding: 85px 11%;
 }
 
@@ -514,17 +489,17 @@ summary:focus-visible {
   margin-bottom: 26px;
 }
 
-/* PRODUCT HIGHLIGHTS */
+/* FEATURES */
 
 .features {
   padding: 105px 6%;
-  background: white;
   text-align: center;
+  background: white;
 }
 
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3,1fr);
   gap: 24px;
   max-width: 1250px;
   margin: 50px auto 0;
@@ -555,7 +530,7 @@ summary:focus-visible {
   font-size: 15px;
 }
 
-/* SECOND VIDEO SECTION */
+/* SECOND VIDEO */
 
 .demo {
   padding: 100px 6%;
@@ -589,7 +564,6 @@ summary:focus-visible {
   width: 100%;
   max-height: 610px;
   object-fit: contain;
-
   opacity: 1;
   mix-blend-mode: normal;
   filter: none;
@@ -617,8 +591,8 @@ summary:focus-visible {
 .information-copy {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
+  justify-content: center;
   padding: 80px 10%;
 }
 
@@ -675,7 +649,7 @@ details p {
   padding: 110px 6%;
   text-align: center;
   color: white;
-  background: linear-gradient(125deg, #302151, #755493);
+  background: linear-gradient(125deg,#302151,#755493);
 }
 
 .coming-soon .label {
@@ -683,7 +657,7 @@ details p {
 }
 
 .coming-soon h2 {
-  font-size: clamp(43px, 6vw, 80px);
+  font-size: clamp(43px,6vw,80px);
   margin-bottom: 26px;
 }
 
@@ -779,7 +753,7 @@ details p {
   }
 
   .hero-product-overlay {
-    left: 0%;
+    left: 0;
     top: 16%;
     width: 54%;
   }
@@ -891,7 +865,7 @@ details p {
 
 <main>
 
-<!-- MAIN HERO -->
+<!-- HERO -->
 
 <section class="hero" id="home">
 
@@ -900,7 +874,7 @@ details p {
     <img
       id="heroMainImage"
       src="hero-main.png"
-      alt="The Slimming Iron luxury spa background"
+      alt="The Slimming Iron luxury spa image"
       loading="eager"
       fetchpriority="high"
     >
@@ -911,11 +885,11 @@ details p {
     >
       <div>
         <h2>THE SLIMMING IRON</h2>
-        <p>Upload hero-main.png to display your hero image.</p>
+        <p>Upload hero-main.png to display the hero image.</p>
       </div>
     </div>
 
-    <!-- ROTATING PRODUCT WITH BACKGROUND REMOVAL -->
+    <!-- SOLID ROTATING PRODUCT -->
 
     <div class="hero-product-overlay">
 
@@ -927,7 +901,7 @@ details p {
         playsinline
         preload="auto"
         crossorigin="anonymous"
-        aria-label="Rotating Slimming Iron product"
+        aria-label="Rotating Slimming Iron"
       >
         <source src="hero.mp4" type="video/mp4">
         Your browser does not support video.
@@ -935,9 +909,9 @@ details p {
 
       <canvas
         id="productCanvas"
-        width="640"
-        height="360"
-        aria-label="Rotating Slimming Iron with transparent background"
+        width="480"
+        height="270"
+        aria-label="Rotating Slimming Iron with a transparent background"
       ></canvas>
 
     </div>
@@ -977,7 +951,7 @@ details p {
 
 </section>
 
-<!-- LIFESTYLE SECTION -->
+<!-- LIFESTYLE -->
 
 <section class="lifestyle" id="product">
 
@@ -1019,7 +993,7 @@ details p {
 
 </section>
 
-<!-- PROMOTIONAL BANNER -->
+<!-- BANNER -->
 
 <section class="promo-banner">
   <p>
@@ -1028,7 +1002,7 @@ details p {
   </p>
 </section>
 
-<!-- PRODUCT FEATURE -->
+<!-- PRODUCT PHOTO -->
 
 <section class="product-feature">
 
@@ -1039,8 +1013,8 @@ details p {
     <h2 class="title">THE SLIMMING IRON</h2>
 
     <p>
-      Discover the device's distinctive ring-shaped
-      opening, white exterior, black control surface,
+      Discover the device's distinctive ring-shaped opening,
+      white exterior, black control surface,
       and rose gold detailing.
     </p>
 
@@ -1061,24 +1035,25 @@ details p {
 
     <img
       src="product.png"
-      alt="The Slimming Iron white, black and rose gold beauty device"
+      alt="The Slimming Iron white black and rose gold beauty device"
       loading="lazy"
     >
   </div>
 
 </section>
 
-<!-- EDITORIAL SECTION -->
+<!-- EDITORIAL -->
 
 <section class="statement">
   <div class="label">The Slimming Iron</div>
+
   <h2>
     A CLOSER LOOK<br>
     <em>AT THE DETAILS.</em>
   </h2>
 </section>
 
-<!-- SPA SECTION -->
+<!-- SPA -->
 
 <section class="spa-section">
 
@@ -1186,7 +1161,7 @@ details p {
 
 </section>
 
-<!-- PRODUCT INFORMATION -->
+<!-- INFORMATION -->
 
 <section class="information">
 
@@ -1320,8 +1295,7 @@ details p {
 </footer>
 
 <script>
-
-/* COPYRIGHT YEAR */
+/* COPYRIGHT */
 
 document.getElementById("year").textContent =
   new Date().getFullYear();
@@ -1345,11 +1319,8 @@ navigation.querySelectorAll("a").forEach(function(link) {
 
 /* HERO IMAGE FALLBACK */
 
-const heroMainImage =
-  document.getElementById("heroMainImage");
-
-const heroImageFallback =
-  document.getElementById("heroImageFallback");
+const heroMainImage = document.getElementById("heroMainImage");
+const heroImageFallback = document.getElementById("heroImageFallback");
 
 function showHeroFallback() {
   heroMainImage.style.display = "none";
@@ -1358,45 +1329,43 @@ function showHeroFallback() {
 
 heroMainImage.addEventListener("error", showHeroFallback);
 
-if (
-  heroMainImage.complete &&
-  heroMainImage.naturalWidth === 0
-) {
+if (heroMainImage.complete && heroMainImage.naturalWidth === 0) {
   showHeroFallback();
 }
 
-/* ==========================================
-   ROTATING PRODUCT VIDEO
+/* ===================================================
+   ROTATING PRODUCT BACKGROUND REMOVAL
 
-   The video is used as the source.
+   Revised technique:
 
-   Only selected white areas are removed.
-   Other pixels keep their original colors
-   and full opacity.
+   1. Find colored product outlines.
+   2. Connect small gaps in the outline.
+   3. Keep the main product shape fully opaque.
+   4. Make the area outside that shape transparent.
+   5. Attempt to clear the ring's center opening.
 
-   The product is never blended using
-   mix-blend-mode or reduced opacity.
-========================================== */
+   Unlike the previous code, individual white
+   product pixels do not repeatedly change alpha.
+
+   All pixels inside the detected product shape
+   are fully opaque.
+=================================================== */
 
 const heroVideo = document.getElementById("heroVideo");
 const productCanvas = document.getElementById("productCanvas");
+const outputContext = productCanvas.getContext("2d");
 
 const videoPlay = document.getElementById("videoPlay");
 const videoMute = document.getElementById("videoMute");
 
-const W = 640;
-const H = 360;
-const TOTAL = W * H;
+const W = 480;
+const H = 270;
+const COUNT = W * H;
 
 productCanvas.width = W;
 productCanvas.height = H;
 
-const outputContext = productCanvas.getContext("2d", {
-  alpha: true
-});
-
 const sourceCanvas = document.createElement("canvas");
-
 sourceCanvas.width = W;
 sourceCanvas.height = H;
 
@@ -1408,74 +1377,217 @@ heroVideo.muted = true;
 
 let rendering = false;
 let animationId = null;
-let lastVideoTime = -1;
-let lastDrawTime = 0;
+let previousVideoTime = -1;
+let previousDrawTime = 0;
 
 /*
-  The video background is expected to be
-  white or nearly white.
+  This identifies pixels that are noticeably
+  different from the white video background.
 
-  This deliberately does not remove
-  all white pixels everywhere.
+  The white portions of the device are later
+  preserved by filling the detected shape.
 */
 
-function isBackgroundWhite(data, position) {
-  const i = position * 4;
+function createInitialShape(data) {
+  const shape = new Uint8Array(COUNT);
 
-  const r = data[i];
-  const g = data[i + 1];
-  const b = data[i + 2];
+  for (let p = 0; p < COUNT; p++) {
+    const i = p * 4;
 
-  const spread =
-    Math.max(r, g, b) -
-    Math.min(r, g, b);
+    const r = data[i];
+    const g = data[i + 1];
+    const b = data[i + 2];
 
-  return (
-    r >= 250 &&
-    g >= 250 &&
-    b >= 250 &&
-    spread <= 5
-  );
+    const darkest = Math.min(r, g, b);
+
+    /*
+      Strong contrast identifies the black
+      control surface, metallic borders,
+      and visible product shadows.
+    */
+
+    shape[p] = darkest < 238 ? 1 : 0;
+  }
+
+  return shape;
 }
 
 /*
-  Find white pixels connected to the
-  OUTSIDE edges of the video frame.
+  Expand a binary shape by one pixel.
+
+  Used to connect small gaps in the
+  product's outline.
 */
 
-function findOuterBackground(data) {
-  const visited = new Uint8Array(TOTAL);
-  const mask = new Uint8Array(TOTAL);
-  const queue = new Int32Array(TOTAL);
+function dilate(mask) {
+  const result = new Uint8Array(COUNT);
+
+  for (let y = 0; y < H; y++) {
+    for (let x = 0; x < W; x++) {
+      const p = y * W + x;
+
+      if (mask[p]) {
+        result[p] = 1;
+        continue;
+      }
+
+      let found = false;
+
+      for (let dy = -1; dy <= 1 && !found; dy++) {
+        const yy = y + dy;
+
+        if (yy < 0 || yy >= H) continue;
+
+        for (let dx = -1; dx <= 1; dx++) {
+          const xx = x + dx;
+
+          if (xx < 0 || xx >= W) continue;
+
+          if (mask[yy * W + xx]) {
+            found = true;
+            break;
+          }
+        }
+      }
+
+      result[p] = found ? 1 : 0;
+    }
+  }
+
+  return result;
+}
+
+/*
+  Shrink a binary shape by one pixel.
+
+  Applied after expansion to smooth
+  small gaps without enlarging the
+  whole object permanently.
+*/
+
+function erode(mask) {
+  const result = new Uint8Array(COUNT);
+
+  for (let y = 0; y < H; y++) {
+    for (let x = 0; x < W; x++) {
+      const p = y * W + x;
+
+      let solid = true;
+
+      for (let dy = -1; dy <= 1 && solid; dy++) {
+        const yy = y + dy;
+
+        if (yy < 0 || yy >= H) {
+          solid = false;
+          break;
+        }
+
+        for (let dx = -1; dx <= 1; dx++) {
+          const xx = x + dx;
+
+          if (xx < 0 || xx >= W || !mask[yy * W + xx]) {
+            solid = false;
+            break;
+          }
+        }
+      }
+
+      result[p] = solid ? 1 : 0;
+    }
+  }
+
+  return result;
+}
+
+/*
+  Keep only the largest connected
+  foreground region.
+
+  This helps eliminate isolated video
+  compression noise around the product.
+*/
+
+function largestComponent(mask) {
+  const visited = new Uint8Array(COUNT);
+  const queue = new Int32Array(COUNT);
+
+  let best = null;
+  let bestLength = 0;
+
+  for (let start = 0; start < COUNT; start++) {
+    if (!mask[start] || visited[start]) continue;
+
+    let head = 0;
+    let tail = 0;
+
+    queue[tail++] = start;
+    visited[start] = 1;
+
+    while (head < tail) {
+      const p = queue[head++];
+      const x = p % W;
+      const y = Math.floor(p / W);
+
+      function add(n) {
+        if (visited[n] || !mask[n]) return;
+        visited[n] = 1;
+        queue[tail++] = n;
+      }
+
+      if (x > 0) add(p - 1);
+      if (x < W - 1) add(p + 1);
+      if (y > 0) add(p - W);
+      if (y < H - 1) add(p + W);
+    }
+
+    if (tail > bestLength) {
+      bestLength = tail;
+      best = queue.slice(0, tail);
+    }
+  }
+
+  const result = new Uint8Array(COUNT);
+
+  if (best) {
+    for (let i = 0; i < best.length; i++) {
+      result[best[i]] = 1;
+    }
+  }
+
+  return result;
+}
+
+/*
+  Fill enclosed regions inside the
+  main product silhouette.
+
+  This is the important change:
+  the white body is treated as part
+  of the device rather than as background.
+*/
+
+function fillShape(mask) {
+  const exterior = new Uint8Array(COUNT);
+  const queue = new Int32Array(COUNT);
 
   let head = 0;
   let tail = 0;
 
-  function visit(position) {
-    if (
-      position < 0 ||
-      position >= TOTAL ||
-      visited[position]
-    ) {
-      return;
-    }
+  function add(p) {
+    if (mask[p] || exterior[p]) return;
 
-    visited[position] = 1;
-
-    if (isBackgroundWhite(data, position)) {
-      mask[position] = 1;
-      queue[tail++] = position;
-    }
+    exterior[p] = 1;
+    queue[tail++] = p;
   }
 
   for (let x = 0; x < W; x++) {
-    visit(x);
-    visit((H - 1) * W + x);
+    add(x);
+    add((H - 1) * W + x);
   }
 
   for (let y = 0; y < H; y++) {
-    visit(y * W);
-    visit(y * W + W - 1);
+    add(y * W);
+    add(y * W + W - 1);
   }
 
   while (head < tail) {
@@ -1483,35 +1595,41 @@ function findOuterBackground(data) {
     const x = p % W;
     const y = Math.floor(p / W);
 
-    if (x > 0) visit(p - 1);
-    if (x < W - 1) visit(p + 1);
-    if (y > 0) visit(p - W);
-    if (y < H - 1) visit(p + W);
+    if (x > 0) add(p - 1);
+    if (x < W - 1) add(p + 1);
+    if (y > 0) add(p - W);
+    if (y < H - 1) add(p + W);
   }
 
-  return mask;
+  const filled = new Uint8Array(COUNT);
+
+  for (let p = 0; p < COUNT; p++) {
+    filled[p] = exterior[p] ? 0 : 1;
+  }
+
+  return filled;
 }
 
 /*
-  Identify a large enclosed white region
-  inside the circular ring.
+  Identify an enclosed region corresponding
+  to the ring opening.
 
-  Small white regions, including highlights
-  and symbols, are not selected.
+  This is still approximate, because
+  the source video has no alpha channel.
 */
 
-function findRingOpening(data, outerMask) {
-  const visited = new Uint8Array(TOTAL);
-  const queue = new Int32Array(TOTAL);
+function findRingHole(data, originalShape, solidShape) {
+  const visited = new Uint8Array(COUNT);
+  const queue = new Int32Array(COUNT);
 
   let bestRegion = null;
   let bestArea = 0;
 
-  for (let start = 0; start < TOTAL; start++) {
+  for (let start = 0; start < COUNT; start++) {
     if (
       visited[start] ||
-      outerMask[start] ||
-      !isBackgroundWhite(data, start)
+      !solidShape[start] ||
+      originalShape[start]
     ) {
       continue;
     }
@@ -1519,138 +1637,156 @@ function findRingOpening(data, outerMask) {
     let head = 0;
     let tail = 0;
 
-    visited[start] = 1;
-    queue[tail++] = start;
-
     let minX = W;
-    let maxX = 0;
     let minY = H;
+    let maxX = 0;
     let maxY = 0;
 
-    let sumX = 0;
-    let sumY = 0;
-
-    let touchesOutside = false;
-
-    function addNeighbor(position) {
-      if (
-        position < 0 ||
-        position >= TOTAL ||
-        visited[position] ||
-        outerMask[position]
-      ) {
-        return;
-      }
-
-      visited[position] = 1;
-
-      if (isBackgroundWhite(data, position)) {
-        queue[tail++] = position;
-      }
-    }
+    visited[start] = 1;
+    queue[tail++] = start;
 
     while (head < tail) {
       const p = queue[head++];
       const x = p % W;
       const y = Math.floor(p / W);
 
-      if (
-        x === 0 ||
-        x === W - 1 ||
-        y === 0 ||
-        y === H - 1
-      ) {
-        touchesOutside = true;
-      }
-
       minX = Math.min(minX, x);
-      maxX = Math.max(maxX, x);
       minY = Math.min(minY, y);
+      maxX = Math.max(maxX, x);
       maxY = Math.max(maxY, y);
 
-      sumX += x;
-      sumY += y;
+      function add(n) {
+        if (
+          visited[n] ||
+          originalShape[n] ||
+          !solidShape[n]
+        ) {
+          return;
+        }
 
-      if (x > 0) addNeighbor(p - 1);
-      if (x < W - 1) addNeighbor(p + 1);
-      if (y > 0) addNeighbor(p - W);
-      if (y < H - 1) addNeighbor(p + W);
+        visited[n] = 1;
+        queue[tail++] = n;
+      }
+
+      if (x > 0) add(p - 1);
+      if (x < W - 1) add(p + 1);
+      if (y > 0) add(p - W);
+      if (y < H - 1) add(p + W);
     }
 
     const area = tail;
+    const boxWidth = maxX - minX + 1;
+    const boxHeight = maxY - minY + 1;
+    const aspect = boxWidth / boxHeight;
 
-    const width = maxX - minX + 1;
-    const height = maxY - minY + 1;
-
-    const aspect = width / height;
-
-    const centerX = sumX / area;
-    const centerY = sumY / area;
-
-    const likelyOpening =
-      !touchesOutside &&
-      area > TOTAL * 0.006 &&
-      area < TOTAL * 0.18 &&
-      width > W * 0.055 &&
-      height > H * 0.08 &&
+    const looksLikeRingHole =
+      area > COUNT * 0.008 &&
+      area < COUNT * 0.18 &&
       aspect > 0.45 &&
-      aspect < 2 &&
-      centerX > W * 0.15 &&
-      centerX < W * 0.85 &&
-      centerY > H * 0.08 &&
-      centerY < H * 0.82;
+      aspect < 2.2 &&
+      minY < H * 0.8;
 
-    if (likelyOpening && area > bestArea) {
+    if (looksLikeRingHole && area > bestArea) {
       bestArea = area;
       bestRegion = queue.slice(0, tail);
     }
   }
 
-  const openingMask = new Uint8Array(TOTAL);
+  const hole = new Uint8Array(COUNT);
 
   if (bestRegion) {
     for (let i = 0; i < bestRegion.length; i++) {
-      openingMask[bestRegion[i]] = 1;
+      hole[bestRegion[i]] = 1;
     }
   }
 
-  return openingMask;
+  return hole;
 }
 
 /*
-  Make selected background pixels
-  transparent.
+  Build a mask for the object.
 
-  Keep the original RGB values
-  of every retained device pixel.
+  The final device is opaque wherever
+  it belongs to the detected silhouette.
 */
 
-function makeBackgroundTransparent(frame) {
+function createProductMask(data) {
+  const initial = createInitialShape(data);
+
+  /*
+    Connect small gaps before finding
+    the main object.
+  */
+
+  let closed = dilate(initial);
+  closed = dilate(closed);
+  closed = erode(closed);
+  closed = erode(closed);
+
+  const main = largestComponent(closed);
+
+  const solid = fillShape(main);
+
+  const hole = findRingHole(data, closed, solid);
+
+  for (let p = 0; p < COUNT; p++) {
+    if (hole[p]) {
+      solid[p] = 0;
+    }
+  }
+
+  return solid;
+}
+
+/*
+  Do not gradually fade interior pixels.
+
+  Pixels belonging to the product are
+  completely opaque.
+
+  Only the immediate boundary gets
+  limited antialiasing for a cleaner edge.
+*/
+
+function applyMask(frame, mask) {
   const data = frame.data;
 
-  const outerMask = findOuterBackground(data);
-  const openingMask = findRingOpening(data, outerMask);
+  for (let y = 0; y < H; y++) {
+    for (let x = 0; x < W; x++) {
+      const p = y * W + x;
+      const i = p * 4;
 
-  for (let p = 0; p < TOTAL; p++) {
-    const i = p * 4;
+      if (mask[p]) {
+        data[i + 3] = 255;
+        continue;
+      }
 
-    if (outerMask[p] || openingMask[p]) {
-      data[i + 3] = 0;
-    } else {
-      data[i + 3] = 255;
+      /*
+        Slight edge smoothing is applied
+        only outside the solid silhouette.
+      */
+
+      let neighbors = 0;
+
+      if (x > 0 && mask[p - 1]) neighbors++;
+      if (x < W - 1 && mask[p + 1]) neighbors++;
+      if (y > 0 && mask[p - W]) neighbors++;
+      if (y < H - 1 && mask[p + W]) neighbors++;
+
+      data[i + 3] = neighbors >= 3 ? 96 : 0;
     }
   }
 
   return frame;
 }
 
-/* PROCESS ONE VIDEO FRAME */
+/* DRAW VIDEO FRAME */
 
 function drawFrame() {
   if (
+    heroVideo.readyState < 2 ||
     !sourceContext ||
-    !outputContext ||
-    heroVideo.readyState < 2
+    !outputContext
   ) {
     return;
   }
@@ -1667,18 +1803,17 @@ function drawFrame() {
     );
 
     const frame = sourceContext.getImageData(
-      0,
-      0,
-      W,
-      H
+      0, 0, W, H
     );
 
-    const processed = makeBackgroundTransparent(frame);
+    const mask = createProductMask(frame.data);
+
+    const result = applyMask(frame, mask);
 
     outputContext.clearRect(0, 0, W, H);
 
     outputContext.putImageData(
-      processed,
+      result,
       0,
       0
     );
@@ -1686,27 +1821,25 @@ function drawFrame() {
     stopRendering();
 
     console.warn(
-      "Video background processing could not complete.",
+      "Video background processing unavailable.",
       error
     );
   }
 }
 
-/* ANIMATION CONTROL */
+/* VIDEO ANIMATION */
 
 function animationLoop(timestamp) {
-  if (!rendering) {
-    return;
-  }
+  if (!rendering) return;
 
   if (
     !heroVideo.paused &&
     heroVideo.readyState >= 2 &&
-    timestamp - lastDrawTime >= 50
+    timestamp - previousDrawTime >= 65
   ) {
-    if (heroVideo.currentTime !== lastVideoTime) {
-      lastVideoTime = heroVideo.currentTime;
-      lastDrawTime = timestamp;
+    if (heroVideo.currentTime !== previousVideoTime) {
+      previousVideoTime = heroVideo.currentTime;
+      previousDrawTime = timestamp;
       drawFrame();
     }
   }
@@ -1717,13 +1850,11 @@ function animationLoop(timestamp) {
 }
 
 function startRendering() {
-  if (rendering) {
-    return;
-  }
+  if (rendering) return;
 
   rendering = true;
-  lastVideoTime = -1;
-  lastDrawTime = 0;
+  previousVideoTime = -1;
+  previousDrawTime = 0;
 
   animationId = requestAnimationFrame(animationLoop);
 }
@@ -1737,7 +1868,7 @@ function stopRendering() {
   }
 }
 
-/* VIDEO BUTTONS */
+/* VIDEO CONTROLS */
 
 function updateVideoButtons() {
   videoPlay.textContent =
@@ -1745,20 +1876,6 @@ function updateVideoButtons() {
 
   videoMute.textContent =
     heroVideo.muted ? "Unmute" : "Mute";
-
-  videoPlay.setAttribute(
-    "aria-label",
-    heroVideo.paused
-      ? "Play rotating product video"
-      : "Pause rotating product video"
-  );
-
-  videoMute.setAttribute(
-    "aria-label",
-    heroVideo.muted
-      ? "Unmute rotating product video"
-      : "Mute rotating product video"
-  );
 }
 
 heroVideo.addEventListener("playing", function() {
@@ -1795,12 +1912,14 @@ videoMute.addEventListener("click", function() {
 });
 
 heroVideo.play().catch(updateVideoButtons);
+
 updateVideoButtons();
 
-/* OTHER IMAGE ERROR HANDLING */
+/* MISSING IMAGE HANDLING */
 
 document.querySelectorAll(".photo-panel img")
   .forEach(function(image) {
+
     function hideMissing() {
       image.style.display = "none";
     }
@@ -1816,5 +1935,6 @@ document.querySelectorAll(".photo-panel img")
   });
 
 </script>
+
 </body>
 </html>
