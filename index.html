@@ -2,452 +2,325 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Slimming Iron | Official Website</title>
+
+<meta name="description" content="Discover The Slimming Iron. Explore the device, its design, and the official product presentation.">
 <meta name="theme-color" content="#302151">
-<meta name="description" content="Introducing The Slimming Iron. Discover the device and watch the official product presentation.">
-<title>The Slimming Iron | Official Product Reveal</title>
 
 <style>
+
+/* GLOBAL STYLES */
+
 :root {
   --purple:#302151;
-  --dark:#211536;
-  --plum:#4c3370;
-  --violet:#7955a2;
+  --deep:#211638;
   --lavender:#ae8ac9;
-  --lilac:#e6d6f0;
+  --lilac:#e4d3ee;
   --blush:#f4e9ef;
-  --cream:#faf7fb;
-  --white:#fff;
-  --ink:#2e2540;
-  --muted:#70667a;
+  --cream:#fbf7f9;
+  --white:#ffffff;
+  --ink:#302838;
+  --muted:#6c626f;
 }
 
-* {box-sizing:border-box}
+* {
+  box-sizing:border-box;
+}
 
-html {scroll-behavior:smooth}
+html {
+  scroll-behavior:smooth;
+}
 
 body {
   margin:0;
   font-family:Arial,Helvetica,sans-serif;
   color:var(--ink);
   background:white;
-  overflow-x:hidden;
 }
-
-h1,h2,h3,p {margin-top:0}
 
 h1,h2,h3 {
   font-family:Georgia,"Times New Roman",serif;
   font-weight:400;
 }
 
-p {line-height:1.7}
-
-a {color:inherit;text-decoration:none}
-
-button {cursor:pointer;font:inherit}
-
-button:focus-visible,
-a:focus-visible,
-summary:focus-visible {
-  outline:3px solid #c29cfa;
-  outline-offset:4px;
+p {
+  line-height:1.7;
 }
 
-.container {
-  width:min(92%,1320px);
-  margin:auto;
+a {
+  text-decoration:none;
+  color:inherit;
 }
 
-.section-tag {
-  display:inline-block;
-  font-size:11px;
-  font-weight:800;
+button {
+  cursor:pointer;
+  font:inherit;
+}
+
+img,video {
+  max-width:100%;
+  display:block;
+}
+
+.section-label {
+  color:#8764a2;
+  font-weight:bold;
+  font-size:12px;
   letter-spacing:3px;
   text-transform:uppercase;
-  color:var(--violet);
-  margin-bottom:18px;
+  margin-bottom:20px;
 }
 
 .section-title {
-  font-size:clamp(38px,5vw,70px);
-  line-height:1.08;
+  font-size:clamp(38px,4.8vw,67px);
+  line-height:1.12;
   color:var(--purple);
-  margin-bottom:22px;
+  margin:0 0 25px;
 }
 
-.primary-button {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:54px;
-  padding:17px 30px;
-  border:1px solid var(--purple);
+.button {
+  display:inline-block;
+  text-align:center;
+  padding:18px 34px;
   background:var(--purple);
   color:white;
+  font-size:13px;
+  font-weight:bold;
+  letter-spacing:1.5px;
   text-transform:uppercase;
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:1.8px;
-  transition:.25s;
+  border:0;
+  transition:background .2s;
 }
 
-.primary-button:hover {
-  background:var(--violet);
-  border-color:var(--violet);
-  transform:translateY(-2px);
+.button:hover {
+  background:#75529a;
 }
 
-.light-button {
+.button.lavender {
+  background:var(--lavender);
+  color:white;
+}
+
+.button.white {
   background:white;
   color:var(--purple);
-  border-color:white;
 }
 
-.light-button:hover {
-  background:var(--lilac);
-  border-color:var(--lilac);
-}
-
-/* TOP ANNOUNCEMENT */
+/* ANNOUNCEMENT */
 
 .announcement {
   background:var(--purple);
   color:white;
-  padding:12px 20px;
   text-align:center;
-  font-size:11px;
-  letter-spacing:2px;
-  font-weight:700;
-  text-transform:uppercase;
+  padding:12px 20px;
+  font-size:12px;
+  letter-spacing:1.5px;
 }
 
-/* NAVIGATION */
+/* HEADER */
 
-.site-header {
+.header {
   background:white;
-  border-bottom:1px solid #e8deee;
+  border-bottom:1px solid #eee7f1;
   position:relative;
-  z-index:20;
+  z-index:10;
 }
 
 .header-inner {
   max-width:1500px;
   margin:auto;
-  padding:18px 5%;
-  min-height:92px;
+  padding:20px 5%;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:25px;
+  gap:28px;
+  min-height:90px;
 }
 
-.logo {
-  color:var(--purple);
+.brand {
   text-align:center;
-  display:block;
+  color:var(--purple);
   flex-shrink:0;
 }
 
-.logo-main {
+.brand-name {
   font-family:Georgia,serif;
-  font-size:29px;
-  letter-spacing:1.8px;
-  white-space:nowrap;
+  font-size:clamp(22px,2.4vw,32px);
+  letter-spacing:2px;
 }
 
-.logo-sub {
-  display:block;
-  font-size:9px;
+.brand-subtitle {
+  font-size:10px;
   letter-spacing:4px;
+  color:#8964a4;
+  margin-top:7px;
   font-weight:bold;
-  color:var(--violet);
-  margin-top:6px;
 }
 
-.desktop-nav {
+.navigation {
   display:flex;
   align-items:center;
-  gap:27px;
+  gap:28px;
 }
 
-.desktop-nav a {
+.navigation a {
+  font-size:12px;
   text-transform:uppercase;
-  font-size:11px;
-  font-weight:bold;
   letter-spacing:1.2px;
-}
-
-.desktop-nav a:hover {color:var(--violet)}
-
-.nav-shop {
-  border:1px solid var(--purple);
-  padding:13px 19px;
-}
-
-.menu-button {
-  display:none;
-  background:none;
-  border:1px solid var(--purple);
-  padding:10px 14px;
   color:var(--purple);
 }
 
-/* INFOMERCIAL HERO */
+.navigation a:hover {
+  color:#946fb0;
+}
+
+.header-button {
+  border:1px solid var(--purple);
+  padding:13px 22px;
+}
+
+.mobile-menu {
+  display:none;
+  background:white;
+  color:var(--purple);
+  border:1px solid var(--purple);
+  padding:10px 14px;
+}
+
+/* MAIN HERO */
 
 .hero {
   display:grid;
-  grid-template-columns:48% 32% 20%;
-  min-height:670px;
+  grid-template-columns:57% 43%;
+  min-height:650px;
+  background:var(--blush);
 }
 
-.hero-video {
+.hero-media {
+  min-height:650px;
   position:relative;
+  background:#e5d6eb;
   overflow:hidden;
-  min-height:670px;
-  background:radial-gradient(
-    circle at center,
-    #e9d9f1 0%,
-    #b59bce 52%,
-    #674a8d 100%
-  );
 }
 
-.hero-video::before {
-  content:"";
-  position:absolute;
-  width:75%;
-  aspect-ratio:1;
-  border:1px solid rgba(255,255,255,.55);
-  border-radius:50%;
-  top:10%;
-  left:12%;
-}
-
-.hero-video::after {
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    to top,
-    rgba(30,19,49,.38),
-    transparent 40%
-  );
-  pointer-events:none;
-  z-index:2;
-}
-
-.hero-video video {
+.hero-media video {
   position:absolute;
   inset:0;
   width:100%;
   height:100%;
   object-fit:contain;
-  z-index:1;
+  background:linear-gradient(
+    120deg,
+    #e9deef,
+    #bfa7d0
+  );
 }
 
-.hero-watermark {
+.hero-label {
   position:absolute;
-  top:35px;
+  top:30px;
   left:35px;
-  font-size:11px;
-  color:white;
-  letter-spacing:3px;
+  font-size:12px;
   font-weight:bold;
-  z-index:3;
+  letter-spacing:3px;
+  color:var(--purple);
+  background:rgba(255,255,255,.86);
+  padding:11px 16px;
+  pointer-events:none;
 }
 
-.video-controls {
+.hero-control {
   position:absolute;
   bottom:25px;
-  left:25px;
-  z-index:4;
+  left:30px;
   display:flex;
   gap:10px;
 }
 
-.video-controls button {
-  border:1px solid rgba(255,255,255,.7);
-  background:rgba(35,20,55,.72);
+.hero-control button {
+  background:rgba(48,33,81,.85);
+  border:1px solid white;
   color:white;
-  padding:12px 17px;
-  font-size:11px;
-  letter-spacing:1px;
+  padding:12px 18px;
+  font-size:12px;
   font-weight:bold;
 }
-
-.video-controls button:hover {
-  background:var(--purple);
-}
-
-.video-error {
-  display:none;
-  position:absolute;
-  inset:0;
-  z-index:3;
-  padding:35px;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  text-align:center;
-  color:white;
-  background:linear-gradient(135deg,#6d5287,#302151);
-}
-
-.video-error strong {
-  font:35px Georgia,serif;
-}
-
-.video-error p {
-  margin-top:18px;
-  max-width:340px;
-  font-size:14px;
-}
-
-/* HERO CENTER */
 
 .hero-content {
+  background:#f7ecef;
+  text-align:center;
   display:flex;
   flex-direction:column;
-  justify-content:center;
-  text-align:center;
   align-items:center;
-  background:var(--blush);
-  padding:50px 9%;
-}
-
-.hero-kicker {
-  font-size:12px;
-  text-transform:uppercase;
-  letter-spacing:3px;
-  color:var(--violet);
-  font-weight:bold;
-  margin-bottom:25px;
+  justify-content:center;
+  padding:65px 9%;
 }
 
 .hero-content h1 {
-  font-size:clamp(49px,5vw,80px);
-  line-height:1;
+  font-size:clamp(48px,5vw,78px);
+  line-height:1.04;
+  margin:0 0 25px;
   color:var(--purple);
-  margin-bottom:24px;
 }
 
 .hero-content h1 em {
-  display:block;
   font-weight:400;
-  color:#7d5a9c;
+  color:#80579d;
 }
 
 .hero-content p {
-  max-width:460px;
-  font-size:16px;
-  color:#574d61;
+  font-size:18px;
+  max-width:480px;
+  color:#625669;
+  margin:0 0 25px;
 }
 
-.hero-ornament {
-  width:75px;
+.hero-accent {
+  width:70px;
   height:2px;
   background:var(--lavender);
-  margin:13px auto 28px;
+  margin:10px 0 30px;
 }
 
-.hero-content h2 {
-  font-size:clamp(27px,3vw,43px);
+.hero-message {
+  font-family:Georgia,serif;
+  font-size:clamp(26px,2.5vw,37px);
+  line-height:1.25;
   color:var(--purple);
-  line-height:1.15;
-  margin-bottom:28px;
+  margin-bottom:30px;
 }
 
-/* HERO PROMOTIONAL PANEL */
-
-.hero-promo {
-  background:linear-gradient(
-    150deg,
-    #dfcbed,
-    #ad89c8 55%,
-    #664789
-  );
-  color:white;
-  padding:50px 10%;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-}
-
-.hero-promo .promo-label {
-  font-size:11px;
-  font-weight:bold;
-  letter-spacing:3px;
+.hero-note {
+  font-size:12px;
+  letter-spacing:2px;
+  margin-top:25px;
+  color:#6d5776;
   text-transform:uppercase;
-  margin-bottom:35px;
 }
 
-.hero-promo h2 {
-  font-size:clamp(32px,3vw,54px);
-  line-height:1.12;
-  margin-bottom:25px;
-}
+/* PURPLE INFO STRIP */
 
-.hero-promo p {
-  font-size:14px;
-  color:#fff9ff;
-}
-
-.promo-circle {
-  border:1px solid white;
-  border-radius:50%;
-  width:112px;
-  height:112px;
-  display:grid;
-  place-items:center;
-  margin-top:30px;
-  transform:rotate(-12deg);
-  font:italic 21px Georgia,serif;
-}
-
-/* PURPLE PROMOTIONAL STRIP */
-
-.promo-strip {
-  background:var(--purple);
-  color:white;
+.info-strip {
   display:grid;
   grid-template-columns:repeat(3,1fr);
+  background:var(--purple);
+  color:white;
 }
 
-.promo-strip div {
+.info-strip div {
   text-align:center;
-  padding:24px 15px;
-  border-right:1px solid rgba(255,255,255,.25);
-  font-size:12px;
-  font-weight:bold;
-  letter-spacing:2px;
+  padding:25px 15px;
   text-transform:uppercase;
+  font-size:12px;
+  letter-spacing:2px;
+  border-right:1px solid rgba(255,255,255,.25);
 }
 
-/* PRODUCT INTRODUCTION */
+/* SIDE BY SIDE EDITORIAL PANELS */
 
-.introduction {
-  text-align:center;
-  padding:110px 6% 90px;
-}
-
-.introduction h2 {
-  max-width:1000px;
-  margin:0 auto 25px;
-}
-
-.introduction p {
-  max-width:760px;
-  margin:auto;
-  color:var(--muted);
-  font-size:17px;
-}
-
-/* EDITORIAL DISPLAY */
-
-.editorial-grid {
+.promo-grid {
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:20px;
@@ -455,268 +328,192 @@ summary:focus-visible {
   background:white;
 }
 
-.editorial-card {
+.promo-card {
   display:grid;
-  grid-template-columns:48% 52%;
-  min-height:475px;
-  background:#f5eef7;
+  grid-template-columns:55% 45%;
+  min-height:440px;
+  background:#f2ecf5;
 }
 
-.editorial-card:nth-child(2) {
-  background:#f8eef1;
+.promo-card:nth-child(2) {
+  background:#f5edef;
 }
 
-.editorial-art {
+.promo-photo {
   position:relative;
+  min-height:440px;
+  background:radial-gradient(
+    circle,
+    #f0e7f4,
+    #baa1cc
+  );
   overflow:hidden;
-  display:grid;
-  place-items:center;
-  min-height:475px;
-  padding:25px;
 }
 
-.art-purple {
-  background:linear-gradient(
-    140deg,
-    #e6d7f1,
-    #a782c6,
-    #674887
-  );
-}
-
-.art-blush {
-  background:linear-gradient(
-    140deg,
-    #fae8f0,
-    #d6b5d7,
-    #9675ae
-  );
-}
-
-.orbit {
+.promo-photo img {
+  width:100%;
+  height:100%;
+  object-fit:contain;
   position:absolute;
-  width:85%;
-  aspect-ratio:1;
-  border:1px solid rgba(255,255,255,.6);
-  border-radius:50%;
+  inset:0;
 }
 
-.orbit.two {
-  width:65%;
-  transform:rotate(45deg);
+.photo-fallback {
+  position:absolute;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:Georgia,serif;
+  font-size:30px;
+  text-align:center;
+  padding:30px;
+  color:#594171;
 }
 
-.device-symbol {
-  position:relative;
+.promo-photo img {
   z-index:2;
-  width:clamp(90px,11vw,165px);
-  height:clamp(190px,24vw,310px);
-  border-radius:45% 45% 30% 30%;
-  background:linear-gradient(
-    95deg,
-    #b6a7b8,
-    #fff 24%,
-    #faf8fb 64%,
-    #b5a9bb
-  );
-  box-shadow:
-    inset -12px 0 20px rgba(0,0,0,.12),
-    25px 35px 40px rgba(37,20,55,.26);
-  transform:rotate(-22deg);
 }
 
-.device-symbol:before {
-  content:"";
-  position:absolute;
-  width:75%;
-  height:32%;
-  left:12.5%;
-  top:9%;
-  background:linear-gradient(145deg,#1c1526,#51455c);
-  border-radius:48%;
-  border:7px solid #c895a0;
-}
-
-.device-symbol:after {
-  content:"";
-  position:absolute;
-  width:35%;
-  height:8%;
-  bottom:20%;
-  left:32.5%;
-  background:#d5acb7;
-  border-radius:40%;
-}
-
-.editorial-art .art-caption {
-  position:absolute;
-  z-index:3;
-  bottom:22px;
-  left:20px;
-  color:white;
-  font-size:10px;
-  font-weight:bold;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
-
-.editorial-copy {
+.promo-copy {
+  padding:40px 8%;
   display:flex;
   flex-direction:column;
-  justify-content:center;
   align-items:flex-start;
-  padding:50px 8%;
+  justify-content:center;
 }
 
-.editorial-copy h3 {
-  font-size:clamp(29px,3vw,43px);
-  line-height:1.15;
+.promo-copy h2 {
+  font-size:clamp(27px,3vw,43px);
   color:var(--purple);
+  line-height:1.15;
+  margin:0 0 20px;
 }
 
-.editorial-copy p {
-  color:var(--muted);
+.promo-copy p {
   font-size:15px;
+  color:var(--muted);
+  margin-bottom:25px;
 }
 
-/* LARGE PROMOTIONAL HEADLINE */
+/* INTRO SECTION */
 
-.big-message {
+.intro {
   padding:110px 6%;
   text-align:center;
+}
+
+.intro h2 {
+  max-width:1000px;
+  margin:0 auto 28px;
+}
+
+.intro p {
+  max-width:750px;
+  margin:auto;
+  color:var(--muted);
+  font-size:17px;
+}
+
+/* LARGE PROMOTIONAL STATEMENT */
+
+.statement {
+  padding:100px 6%;
+  text-align:center;
+  background:#f8f2f9;
+}
+
+.statement h2 {
+  font-size:clamp(45px,6.5vw,93px);
+  line-height:1.05;
+  color:var(--deep);
+  margin:0;
+}
+
+.statement em {
+  color:#8a63ab;
+}
+
+/* PRODUCT TECHNOLOGY */
+
+.technology {
+  display:grid;
+  grid-template-columns:48% 52%;
   background:white;
 }
 
-.big-message h2 {
-  font-size:clamp(44px,7vw,105px);
-  line-height:1.04;
-  color:var(--dark);
-}
-
-.big-message em {
-  color:var(--violet);
-}
-
-/* PRODUCT SPOTLIGHT */
-
-.spotlight {
-  display:grid;
-  grid-template-columns:48% 52%;
-  min-height:590px;
-  background:var(--cream);
-}
-
-.spotlight-art {
-  min-height:590px;
+.technology-image {
   position:relative;
-  overflow:hidden;
-  background:radial-gradient(
-    circle,
-    #eadcf0,
-    #aa8cc2 65%,
-    #6a4d88
-  );
-  display:grid;
-  place-items:center;
+  min-height:580px;
+  background:#e8d9ef;
 }
 
-.spotlight-art .device-symbol {
-  width:185px;
-  height:345px;
-  transform:rotate(18deg);
+.technology-image img {
+  width:100%;
+  height:100%;
+  position:absolute;
+  inset:0;
+  object-fit:contain;
 }
 
-.spotlight-art .orbit {
-  width:65%;
-}
-
-.spotlight-copy {
-  padding:80px 10%;
+.technology-copy {
+  padding:85px 10%;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:flex-start;
 }
 
-.spotlight-copy p {
+.technology-copy p {
   max-width:600px;
   color:var(--muted);
   font-size:16px;
 }
 
-/* DEMONSTRATION */
-
-.demo-section {
-  background:var(--purple);
-  padding:100px 6%;
-  color:white;
-  text-align:center;
-}
-
-.demo-section .section-tag {
-  color:#dcc4ed;
-}
-
-.demo-section .section-title {
-  color:white;
-}
-
-.demo-section p {
-  max-width:670px;
-  margin:0 auto 40px;
-  color:#e9def0;
-}
-
-.demo-frame {
-  width:min(100%,950px);
-  margin:auto;
-  background:linear-gradient(130deg,#bd9cd2,#4f356c);
-  border:9px solid white;
-  box-shadow:0 25px 60px rgba(0,0,0,.25);
-  min-height:300px;
-}
-
-.demo-frame video {
-  display:block;
-  width:100%;
-  max-height:570px;
-  object-fit:contain;
+.technology-copy h3 {
+  font-family:Arial,sans-serif;
+  text-transform:uppercase;
+  font-size:17px;
+  font-weight:normal;
+  letter-spacing:3px;
+  color:#79647f;
+  margin:0 0 28px;
 }
 
 /* FEATURE CARDS */
 
 .features {
-  padding:110px 6%;
-  background:white;
+  background:#fbf8fc;
+  padding:100px 6%;
   text-align:center;
 }
 
-.features-grid {
-  max-width:1250px;
+.feature-grid {
+  max-width:1200px;
   margin:50px auto 0;
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:25px;
-  text-align:left;
 }
 
 .feature {
-  background:var(--blush);
-  padding:44px 34px;
-  border-top:5px solid var(--lavender);
-  min-height:280px;
+  background:white;
+  border:1px solid #e8deed;
+  padding:45px 32px;
+  text-align:left;
 }
 
-.feature .number {
-  font:50px Georgia,serif;
-  color:#9671b5;
+.feature-number {
+  font-family:Georgia,serif;
+  font-size:48px;
+  color:#a381bc;
   margin-bottom:25px;
 }
 
 .feature h3 {
-  font-size:28px;
   color:var(--purple);
-  margin-bottom:16px;
+  font-size:27px;
+  margin:0 0 16px;
 }
 
 .feature p {
@@ -724,259 +521,297 @@ summary:focus-visible {
   font-size:15px;
 }
 
-/* PRODUCT TOUR */
+/* PRODUCT PRESENTATION */
 
-.how-it-works {
-  background:#f5edf8;
+.presentation {
+  background:var(--purple);
+  padding:105px 6%;
+  color:white;
+  text-align:center;
+}
+
+.presentation h2 {
+  color:white;
+}
+
+.presentation .section-label {
+  color:#d8bfe9;
+}
+
+.presentation p {
+  max-width:730px;
+  margin:0 auto 40px;
+  color:#e5d9ec;
+}
+
+.presentation-video {
+  width:min(100%,950px);
+  margin:auto;
+  border:10px solid white;
+  background:#8a6da4;
+  box-shadow:0 20px 55px rgba(0,0,0,.2);
+}
+
+.presentation-video video {
+  width:100%;
+  max-height:580px;
+  object-fit:contain;
+}
+
+/* PRODUCT GALLERY */
+
+.gallery {
   padding:105px 6%;
   text-align:center;
+  background:white;
 }
 
-.steps {
+.gallery-grid {
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:25px;
-  max-width:1200px;
-  margin:55px auto 0;
+  gap:20px;
+  max-width:1250px;
+  margin:45px auto 0;
 }
 
-.step {
-  background:white;
-  padding:40px 30px;
-  border:1px solid #e2d3ec;
+.gallery-item {
+  background:#efe5f2;
+  min-height:310px;
+  position:relative;
+  overflow:hidden;
 }
 
-.step-number {
-  width:60px;
-  height:60px;
-  border-radius:50%;
-  margin:0 auto 25px;
-  display:grid;
-  place-items:center;
-  font-size:24px;
-  font-family:Georgia,serif;
+.gallery-item:nth-child(2) {
+  background:#f4e9ef;
+}
+
+.gallery-item img {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.gallery-item span {
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  background:rgba(48,33,81,.83);
   color:white;
-  background:var(--purple);
-}
-
-.step h3 {
-  font-size:25px;
-  color:var(--purple);
-}
-
-.step p {
-  color:var(--muted);
-  font-size:15px;
-}
-
-/* COMING SOON */
-
-.offer-section {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  min-height:520px;
-}
-
-.offer-visual {
-  background:linear-gradient(
-    145deg,
-    #e8d9ef,
-    #997ab4,
-    #4c306b
-  );
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:60px 8%;
-  text-align:center;
-  color:white;
-}
-
-.offer-visual h2 {
-  font-size:clamp(44px,5vw,75px);
-  line-height:1.1;
-}
-
-.offer-copy {
-  background:var(--blush);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  padding:75px 10%;
-  align-items:flex-start;
-}
-
-.offer-copy p {
-  color:var(--muted);
+  padding:13px;
+  font-size:12px;
+  letter-spacing:1px;
+  text-transform:uppercase;
 }
 
 /* FAQ */
 
 .faq {
-  padding:110px 6%;
-  background:white;
+  background:#faf6fb;
+  padding:100px 6%;
 }
 
-.faq-container {
+.faq-inner {
   max-width:870px;
   margin:auto;
 }
 
-.faq-heading {text-align:center}
+.faq h2 {
+  text-align:center;
+}
 
 details {
-  border-bottom:1px solid #e4d8ed;
-  padding:23px 0;
+  padding:25px 0;
+  border-bottom:1px solid #dfd1e7;
 }
 
 summary {
-  cursor:pointer;
-  font-size:17px;
-  color:var(--purple);
   font-weight:bold;
+  color:var(--purple);
+  font-size:17px;
+  cursor:pointer;
 }
 
 details p {
-  padding-top:15px;
+  margin:17px 0 0;
   color:var(--muted);
-  font-size:15px;
 }
 
-/* FINAL CTA */
+/* COMING SOON */
 
-.final-cta {
+.coming-soon {
+  padding:110px 6%;
   background:linear-gradient(
     125deg,
     #302151,
-    #684689
+    #735491
   );
-  padding:110px 6%;
-  text-align:center;
   color:white;
+  text-align:center;
 }
 
-.final-cta h2 {
-  font-size:clamp(44px,6vw,82px);
+.coming-soon h2 {
+  font-size:clamp(43px,6vw,82px);
+  margin:0 0 25px;
   line-height:1.1;
 }
 
-.final-cta p {
+.coming-soon p {
   max-width:650px;
   margin:0 auto 30px;
-  color:#eee4f5;
+  color:#f0e7f5;
+}
+
+.coming-soon .section-label {
+  color:#e1c7f0;
 }
 
 /* FOOTER */
 
 footer {
-  background:var(--dark);
-  text-align:center;
-  padding:55px 6% 30px;
+  background:var(--deep);
+  padding:60px 6% 30px;
   color:white;
+  text-align:center;
 }
 
 .footer-logo {
-  font:29px Georgia,serif;
+  font-family:Georgia,serif;
+  font-size:29px;
   letter-spacing:3px;
-  margin-bottom:20px;
 }
 
 footer p {
+  color:#e0d4e9;
   font-size:12px;
-  color:#dfd3ea;
 }
 
 .footer-bottom {
-  border-top:1px solid rgba(255,255,255,.17);
   margin-top:35px;
-  padding-top:24px;
+  padding-top:25px;
+  border-top:1px solid rgba(255,255,255,.2);
 }
 
-/* RESPONSIVE */
+/* TABLET */
 
-@media(max-width:1150px) {
-  .desktop-nav {gap:13px}
-  .desktop-nav a {font-size:10px}
-  .hero {grid-template-columns:1fr 1fr}
-  .hero-promo {grid-column:1/-1;min-height:280px}
-  .hero-video {min-height:550px}
-  .editorial-card {grid-template-columns:1fr}
-  .editorial-art {min-height:310px}
-}
+@media(max-width:1100px) {
+  .promo-card {
+    grid-template-columns:1fr;
+  }
 
-@media(max-width:760px) {
-  .header-inner {flex-wrap:wrap}
-  .logo-main {font-size:23px}
-  .desktop-nav {
-    display:none;
-    width:100%;
+  .promo-photo {
+    min-height:340px;
+  }
+
+  .hero {
+    grid-template-columns:55% 45%;
+  }
+
+  .header-inner {
     flex-direction:column;
-    padding:20px;
-    background:var(--blush);
   }
-  .desktop-nav.open {display:flex}
-  .menu-button {display:block}
-  .hero {grid-template-columns:1fr}
-  .hero-video {min-height:430px}
-  .hero-content {padding:70px 7%}
-  .hero-promo {
-    grid-column:auto;
-    min-height:330px;
+}
+
+/* MOBILE */
+
+@media(max-width:700px) {
+  .header-inner {
+    gap:20px;
   }
-  .promo-strip {grid-template-columns:1fr}
-  .editorial-grid {grid-template-columns:1fr}
-  .spotlight {grid-template-columns:1fr}
-  .spotlight-art {min-height:440px}
-  .spotlight-copy {padding:70px 7%}
-  .features-grid {grid-template-columns:1fr}
-  .steps {grid-template-columns:1fr}
-  .offer-section {grid-template-columns:1fr}
-  .offer-visual {min-height:360px}
-  .offer-copy {padding:70px 7%}
-  .introduction,.features,.how-it-works,
-  .faq,.big-message,.demo-section {
+
+  .navigation {
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+  }
+
+  .navigation a {
+    font-size:11px;
+  }
+
+  .hero {
+    grid-template-columns:1fr;
+  }
+
+  .hero-media {
+    min-height:420px;
+  }
+
+  .hero-content {
+    padding:70px 7%;
+  }
+
+  .info-strip {
+    grid-template-columns:1fr;
+  }
+
+  .promo-grid {
+    grid-template-columns:1fr;
+  }
+
+  .promo-card {
+    grid-template-columns:1fr;
+  }
+
+  .technology {
+    grid-template-columns:1fr;
+  }
+
+  .technology-image {
+    min-height:420px;
+  }
+
+  .technology-copy {
+    padding:70px 7%;
+  }
+
+  .feature-grid,
+  .gallery-grid {
+    grid-template-columns:1fr;
+  }
+
+  .intro,.features,.gallery,.faq,
+  .statement,.presentation {
     padding-top:75px;
     padding-bottom:75px;
   }
 }
 
 @media(prefers-reduced-motion:reduce) {
-  html {scroll-behavior:auto}
-  .primary-button {transition:none}
+  html {
+    scroll-behavior:auto;
+  }
 }
+
 </style>
 </head>
 
 <body>
 
 <div class="announcement">
-  The Slimming Iron | Official Product Introduction
+  THE SLIMMING IRON | OFFICIAL PRODUCT INTRODUCTION
 </div>
 
-<header class="site-header">
+<!-- HEADER -->
+
+<header class="header">
   <div class="header-inner">
 
-    <a href="#home" class="logo">
-      <span class="logo-main">THE SLIMMING IRON</span>
-      <span class="logo-sub">BEAUTY TECHNOLOGY</span>
+    <a href="#home" class="brand">
+      <div class="brand-name">THE SLIMMING IRON</div>
+      <div class="brand-subtitle">BEAUTY TECHNOLOGY</div>
     </a>
 
-    <button
-      class="menu-button"
-      id="menuButton"
-      aria-expanded="false"
-      aria-controls="mainNav"
-      type="button"
-    >
-      MENU ☰
-    </button>
-
-    <nav class="desktop-nav" id="mainNav">
+    <nav class="navigation">
       <a href="#discover">Discover</a>
+      <a href="#technology">Technology</a>
       <a href="#features">Features</a>
-      <a href="#demo">Watch Demo</a>
-      <a href="#faq">FAQ</a>
-      <a class="nav-shop" href="#offer">Coming Soon</a>
+      <a href="#presentation">Watch Demo</a>
+      <a class="header-button" href="#availability">
+        Coming Soon
+      </a>
     </nav>
 
   </div>
@@ -984,17 +819,11 @@ footer p {
 
 <main>
 
-<!-- MAIN INFOMERCIAL HERO -->
+<!-- HERO -->
 
 <section class="hero" id="home">
 
-  <div class="hero-video">
-
-    <div class="hero-watermark">
-      THE SLIMMING IRON
-    </div>
-
-    <!-- CORRECT VIDEO FILE: hero.mp4 -->
+  <div class="hero-media">
 
     <video
       id="heroVideo"
@@ -1002,265 +831,293 @@ footer p {
       muted
       loop
       playsinline
+      controls
       preload="auto"
-      aria-label="The Slimming Iron rotating product presentation"
+      aria-label="The Slimming Iron rotating product video"
     >
       <source src="hero.mp4" type="video/mp4">
-      Your browser does not support HTML5 video.
+      Your browser does not support MP4 video.
     </video>
 
-    <div class="video-error" id="videoError">
-      <strong>The Slimming Iron</strong>
-      <p>
-        Product video unavailable.
-        Make sure hero.mp4 is uploaded to
-        the same folder as index.html.
-      </p>
-    </div>
-
-    <div class="video-controls">
-      <button id="playPauseButton" type="button">
-        PAUSE VIDEO
-      </button>
-      <button id="muteButton" type="button">
-        UNMUTE
-      </button>
+    <div class="hero-label">
+      INTRODUCING THE SLIMMING IRON
     </div>
 
   </div>
 
   <div class="hero-content">
 
-    <div class="hero-kicker">
-      Introducing a New Beauty Device
-    </div>
-
-    <h1>
-      The<br>
-      <em>Slimming</em>
-      Iron.
-    </h1>
-
-    <p>
-      Meet the device. Explore its design.
-      Watch the official rotating product
-      presentation and take a closer look.
-    </p>
-
-    <div class="hero-ornament"></div>
-
-    <h2>
-      SEE IT.<br>
-      EXPLORE IT.<br>
-      DISCOVER MORE.
-    </h2>
-
-    <a href="#discover" class="primary-button">
-      Discover The Device
-    </a>
-
-  </div>
-
-  <div class="hero-promo">
-
-    <div class="promo-label">
+    <div class="section-label">
       The Official Product Reveal
     </div>
 
-    <h2>
-      Take a<br>
-      Closer<br>
-      Look.
-    </h2>
+    <h1>
+      THE<br>
+      SLIMMING<br>
+      <em>IRON</em>
+    </h1>
 
     <p>
-      See the shape, finish, and distinctive
-      design of The Slimming Iron.
+      Discover the device, explore the design,
+      and take a closer look at The Slimming Iron.
     </p>
 
-    <div class="promo-circle">
-      COMING<br>SOON
+    <div class="hero-accent"></div>
+
+    <div class="hero-message">
+      MODERN BEAUTY<br>
+      TECHNOLOGY
+    </div>
+
+    <a href="#discover" class="button">
+      LEARN MORE
+    </a>
+
+    <div class="hero-note">
+      Official Product Presentation
     </div>
 
   </div>
 
 </section>
 
-<!-- FEATURE STRIP -->
+<!-- PURPLE INFORMATION STRIP -->
 
-<section class="promo-strip">
-  <div>Official Product Reveal</div>
-  <div>Rotating Device Demonstration</div>
-  <div>Explore The Slimming Iron</div>
+<section class="info-strip">
+  <div>Product Introduction</div>
+  <div>Modern Beauty Technology</div>
+  <div>Official Device Showcase</div>
+</section>
+
+<!-- TWO FEATURE PANELS -->
+
+<section class="promo-grid">
+
+  <article class="promo-card">
+
+    <div class="promo-photo">
+
+      <div class="photo-fallback">
+        THE SLIMMING IRON
+      </div>
+
+      <img
+        id="productImageOne"
+        alt="The Slimming Iron device product view"
+        loading="lazy"
+      >
+
+    </div>
+
+    <div class="promo-copy">
+
+      <div class="section-label">
+        Discover The Design
+      </div>
+
+      <h2>
+        The Slimming Iron Up Close
+      </h2>
+
+      <p>
+        Take a closer look at the device's
+        distinctive shape, finish, and appearance.
+      </p>
+
+      <a href="#technology" class="button lavender">
+        LEARN MORE
+      </a>
+
+    </div>
+
+  </article>
+
+  <article class="promo-card">
+
+    <div class="promo-photo">
+
+      <div class="photo-fallback">
+        PRODUCT SPOTLIGHT
+      </div>
+
+      <img
+        id="productImageTwo"
+        alt="Another angle of The Slimming Iron"
+        loading="lazy"
+      >
+
+    </div>
+
+    <div class="promo-copy">
+
+      <div class="section-label">
+        Product Spotlight
+      </div>
+
+      <h2>
+        Discover Every Detail
+      </h2>
+
+      <p>
+        Explore different views of the device
+        through the official rotating presentation.
+      </p>
+
+      <a href="#presentation" class="button lavender">
+        WATCH VIDEO
+      </a>
+
+    </div>
+
+  </article>
+
 </section>
 
 <!-- INTRODUCTION -->
 
-<section class="introduction" id="discover">
+<section class="intro" id="discover">
 
-  <div class="section-tag">
-    Introducing The Slimming Iron
+  <div class="section-label">
+    Meet The Slimming Iron
   </div>
 
   <h2 class="section-title">
-    One Device.<br>
-    A Distinctive Design.
+    Introducing a New Addition to Beauty Technology.
   </h2>
 
   <p>
-    Welcome to the official introduction of
-    The Slimming Iron. Explore a closer look
-    at the device, its exterior features,
-    and the product presentation.
-    More technical information will be shared
-    as the product details are finalized.
+    The Slimming Iron is a beauty device
+    with a distinctive exterior and contemporary
+    design. Explore the official presentation
+    and discover more about the device as
+    additional product information is released.
   </p>
 
 </section>
 
-<!-- TWO EDITORIAL PRODUCT CARDS -->
+<!-- LARGE HEADLINE -->
 
-<section class="editorial-grid">
+<section class="statement">
 
-  <article class="editorial-card">
-
-    <div class="editorial-art art-purple">
-
-      <div class="orbit"></div>
-      <div class="orbit two"></div>
-
-      <div class="device-symbol"
-        aria-hidden="true"></div>
-
-      <div class="art-caption">
-        Product Design Illustration
-      </div>
-
-    </div>
-
-    <div class="editorial-copy">
-
-      <div class="section-tag">
-        Product Spotlight
-      </div>
-
-      <h3>
-        A Closer Look at the Design.
-      </h3>
-
-      <p>
-        Explore the visual design of The
-        Slimming Iron, including its
-        contrasting colors and modern finish.
-      </p>
-
-      <a class="primary-button" href="#demo">
-        Watch The Product
-      </a>
-
-    </div>
-
-  </article>
-
-  <article class="editorial-card">
-
-    <div class="editorial-art art-blush">
-
-      <div class="orbit"></div>
-      <div class="orbit two"></div>
-
-      <div class="device-symbol"
-        style="transform:rotate(21deg)"
-        aria-hidden="true"></div>
-
-      <div class="art-caption">
-        Product Concept Illustration
-      </div>
-
-    </div>
-
-    <div class="editorial-copy">
-
-      <div class="section-tag">
-        Discover The Details
-      </div>
-
-      <h3>
-        See the Product From Every Angle.
-      </h3>
-
-      <p>
-        Watch the rotating showcase
-        and learn more about the
-        product's exterior appearance.
-      </p>
-
-      <a class="primary-button" href="#features">
-        Explore Highlights
-      </a>
-
-    </div>
-
-  </article>
-
-</section>
-
-<!-- DRAMATIC HEADLINE -->
-
-<section class="big-message">
-
-  <div class="section-tag">
-    The Official Product Introduction
+  <div class="section-label">
+    The Slimming Iron
   </div>
 
   <h2>
-    MEET THE<br>
-    <em>SLIMMING</em><br>
-    IRON.
+    DISCOVER THE<br>
+    <em>DETAILS BEHIND</em><br>
+    THE DESIGN.
   </h2>
 
 </section>
 
-<!-- PRODUCT SPOTLIGHT -->
+<!-- TECHNOLOGY STORY -->
 
-<section class="spotlight">
+<section class="technology" id="technology">
 
-  <div class="spotlight-art">
+  <div class="technology-image">
 
-    <div class="orbit"></div>
+    <div class="photo-fallback">
+      THE SLIMMING IRON
+    </div>
 
-    <div class="device-symbol"
-      aria-hidden="true"></div>
+    <img
+      id="productImageThree"
+      alt="Detailed view of The Slimming Iron"
+      loading="lazy"
+    >
 
   </div>
 
-  <div class="spotlight-copy">
+  <div class="technology-copy">
 
-    <div class="section-tag">
-      Discover The Product
+    <div class="section-label">
+      A Closer Look
     </div>
 
     <h2 class="section-title">
-      Get to Know The Slimming Iron.
+      THE DESIGN OF<br>
+      THE SLIMMING IRON
     </h2>
 
+    <h3>
+      Modern Beauty Device Design
+    </h3>
+
     <p>
-      The rotating product presentation
-      introduces the distinctive profile
-      and exterior design of the device.
+      Explore the distinctive exterior of The
+      Slimming Iron, including the contrasting
+      colors and metallic details visible
+      in the official product video.
     </p>
 
     <p>
-      Explore the visible details now.
-      Information about operating modes,
-      treatment technology, instructions,
-      and specifications will be added
+      Detailed information about the device's
+      operating modes, technology, specifications,
+      and usage instructions will be added
       when confirmed.
     </p>
 
-    <a href="#demo" class="primary-button">
-      Watch Demonstration
+    <a href="#presentation" class="button">
+      SEE THE PRODUCT
     </a>
+
+  </div>
+
+</section>
+
+<!-- FEATURES -->
+
+<section class="features" id="features">
+
+  <div class="section-label">
+    The Slimming Iron
+  </div>
+
+  <h2 class="section-title">
+    Product Highlights
+  </h2>
+
+  <div class="feature-grid">
+
+    <article class="feature">
+      <div class="feature-number">01</div>
+
+      <h3>
+        Distinctive Exterior
+      </h3>
+
+      <p>
+        Discover the shape and visible
+        details of The Slimming Iron.
+      </p>
+    </article>
+
+    <article class="feature">
+      <div class="feature-number">02</div>
+
+      <h3>
+        Product Presentation
+      </h3>
+
+      <p>
+        View the device in motion
+        through the rotating showcase.
+      </p>
+    </article>
+
+    <article class="feature">
+      <div class="feature-number">03</div>
+
+      <h3>
+        Detailed Information
+      </h3>
+
+      <p>
+        More specifications and operating
+        information will be announced.
+      </p>
+    </article>
 
   </div>
 
@@ -1268,249 +1125,122 @@ footer p {
 
 <!-- VIDEO DEMONSTRATION -->
 
-<section class="demo-section" id="demo">
+<section class="presentation" id="presentation">
 
-  <div class="section-tag">
-    Official Product Video
+  <div class="section-label">
+    See The Product
   </div>
 
   <h2 class="section-title">
-    See The Slimming Iron in Motion.
+    Watch The Slimming Iron in Motion.
   </h2>
 
   <p>
-    Watch the rotating presentation
-    and see the device from different
-    perspectives.
+    Explore the rotating device presentation
+    and view The Slimming Iron from multiple angles.
   </p>
 
-  <div class="demo-frame">
+  <div class="presentation-video">
 
-    <video
-      controls
-      playsinline
-      preload="metadata"
-      aria-label="The Slimming Iron product video"
-    >
+    <video controls playsinline preload="metadata">
       <source src="hero.mp4" type="video/mp4">
-      Your browser does not support HTML5 video.
+      Your browser does not support video.
     </video>
 
   </div>
 
 </section>
 
-<!-- FEATURE PRESENTATION -->
+<!-- PHOTO GALLERY -->
 
-<section class="features" id="features">
+<section class="gallery">
 
-  <div class="section-tag">
-    At a Glance
+  <div class="section-label">
+    The Product Gallery
   </div>
 
   <h2 class="section-title">
-    The Product Highlights
+    See It From Every Angle.
   </h2>
 
-  <div class="features-grid">
+  <div class="gallery-grid">
 
-    <article class="feature">
-      <div class="number">01</div>
-
-      <h3>Distinctive Profile</h3>
-
-      <p>
-        Examine the overall silhouette
-        of The Slimming Iron in its
-        rotating product presentation.
-      </p>
-    </article>
-
-    <article class="feature">
-      <div class="number">02</div>
-
-      <h3>Contrasting Finish</h3>
-
-      <p>
-        See the white and black exterior
-        with metallic details featured
-        in the product footage.
-      </p>
-    </article>
-
-    <article class="feature">
-      <div class="number">03</div>
-
-      <h3>Product Technology</h3>
-
-      <p>
-        Detailed technology information,
-        specifications, and operating
-        instructions will be featured
-        when confirmed.
-      </p>
-    </article>
-
-  </div>
-
-</section>
-
-<!-- PRODUCT TOUR -->
-
-<section class="how-it-works">
-
-  <div class="section-tag">
-    Discover The Slimming Iron
-  </div>
-
-  <h2 class="section-title">
-    Take the Product Tour
-  </h2>
-
-  <div class="steps">
-
-    <article class="step">
-      <div class="step-number">1</div>
-
-      <h3>Meet the Device</h3>
-
-      <p>
-        Start with the official
-        Slimming Iron presentation.
-      </p>
-    </article>
-
-    <article class="step">
-      <div class="step-number">2</div>
-
-      <h3>Watch It Rotate</h3>
-
-      <p>
-        View the device's exterior
-        from multiple angles.
-      </p>
-    </article>
-
-    <article class="step">
-      <div class="step-number">3</div>
-
-      <h3>Explore the Details</h3>
-
-      <p>
-        Learn about the design now
-        and watch for more
-        product information.
-      </p>
-    </article>
-
-  </div>
-
-</section>
-
-<!-- COMING SOON PROMOTION -->
-
-<section class="offer-section" id="offer">
-
-  <div class="offer-visual">
-
-    <h2>
-      THE<br>
-      SLIMMING<br>
-      IRON.
-    </h2>
-
-  </div>
-
-  <div class="offer-copy">
-
-    <div class="section-tag">
-      Official Announcement
+    <div class="gallery-item">
+      <img
+        id="galleryOne"
+        alt="Slimming Iron product angle one"
+        loading="lazy"
+      >
+      <span>Product View 01</span>
     </div>
 
-    <h2 class="section-title">
-      Coming Soon.
-    </h2>
+    <div class="gallery-item">
+      <img
+        id="galleryTwo"
+        alt="Slimming Iron product angle two"
+        loading="lazy"
+      >
+      <span>Product View 02</span>
+    </div>
 
-    <p>
-      Visit the official Slimming Iron website
-      for upcoming product information,
-      availability details,
-      and future announcements.
-    </p>
-
-    <a href="#home" class="primary-button">
-      Watch The Product Video
-    </a>
+    <div class="gallery-item">
+      <img
+        id="galleryThree"
+        alt="Slimming Iron product angle three"
+        loading="lazy"
+      >
+      <span>Product View 03</span>
+    </div>
 
   </div>
 
 </section>
 
-<!-- FREQUENTLY ASKED QUESTIONS -->
+<!-- FAQ -->
 
 <section class="faq" id="faq">
 
-  <div class="faq-container">
+  <div class="faq-inner">
 
-    <div class="faq-heading">
-
-      <div class="section-tag">
-        Questions and Answers
-      </div>
-
-      <h2 class="section-title">
-        Frequently Asked Questions
-      </h2>
-
+    <div class="section-label" style="text-align:center">
+      Questions & Answers
     </div>
 
-    <details>
-      <summary>
-        What is The Slimming Iron?
-      </summary>
+    <h2 class="section-title">
+      Frequently Asked Questions
+    </h2>
 
+    <details>
+      <summary>What is The Slimming Iron?</summary>
       <p>
         The Slimming Iron is a beauty device.
-        This official landing page introduces
-        its design and product presentation.
-        Additional specifications will be
-        provided when confirmed.
+        This introductory website presents the device
+        and its exterior design. More detailed
+        technology specifications will follow.
       </p>
     </details>
 
     <details>
-      <summary>
-        Where can I watch the product video?
-      </summary>
-
+      <summary>Where can I watch the product?</summary>
       <p>
-        The rotating product video is
-        featured at the top of this page
-        and in the demonstration section.
+        The product's rotating video appears
+        in the hero and product presentation sections.
       </p>
     </details>
 
     <details>
-      <summary>
-        Where are the technical specifications?
-      </summary>
-
+      <summary>Where are the device specifications?</summary>
       <p>
-        Technical specifications and operating
-        instructions will be added
-        to the official website.
+        Device specifications, operating instructions,
+        and precautions will be added when confirmed.
       </p>
     </details>
 
     <details>
-      <summary>
-        Where can I find product announcements?
-      </summary>
-
+      <summary>Where can I find availability updates?</summary>
       <p>
-        Return to www.slimmingiron.com
-        for official product news
-        and availability information.
+        Check www.slimmingiron.com for
+        official product announcements.
       </p>
     </details>
 
@@ -1518,29 +1248,26 @@ footer p {
 
 </section>
 
-<!-- FINAL CTA -->
+<!-- COMING SOON -->
 
-<section class="final-cta">
+<section class="coming-soon" id="availability">
 
-  <div class="section-tag"
-    style="color:#d9b8ec">
+  <div class="section-label">
     The Slimming Iron
   </div>
 
   <h2>
-    SOMETHING NEW<br>
-    IS COMING.
+    COMING SOON.
   </h2>
 
   <p>
-    Discover the device.
-    Watch the product presentation.
-    Explore The Slimming Iron.
+    Explore the official device presentation
+    and return for additional product information,
+    specifications, and availability announcements.
   </p>
 
-  <a href="#home"
-    class="primary-button light-button">
-    Discover The Device
+  <a href="#home" class="button white">
+    WATCH THE VIDEO
   </a>
 
 </section>
@@ -1564,105 +1291,122 @@ footer p {
   </p>
 
   <div class="footer-bottom">
-
     <p>
       &copy; <span id="year"></span>
-      The Slimming Iron.
-      All Rights Reserved.
+      The Slimming Iron. All Rights Reserved.
     </p>
-
   </div>
 
 </footer>
 
 <script>
+
+/*
+  PRODUCT IMAGE EXTRACTION
+
+  The script takes still frames from hero.mp4
+  and displays them as product photographs.
+
+  No additional image files are required.
+*/
+
 document.getElementById("year").textContent =
   new Date().getFullYear();
-
-/* MOBILE NAVIGATION */
-
-const menuButton =
-  document.getElementById("menuButton");
-
-const mainNav =
-  document.getElementById("mainNav");
-
-menuButton.addEventListener("click", function() {
-  const open = mainNav.classList.toggle("open");
-  menuButton.setAttribute("aria-expanded", String(open));
-});
-
-mainNav.querySelectorAll("a").forEach(function(link) {
-  link.addEventListener("click", function() {
-    mainNav.classList.remove("open");
-    menuButton.setAttribute("aria-expanded", "false");
-  });
-});
-
-/* HERO VIDEO CONTROLS */
 
 const heroVideo =
   document.getElementById("heroVideo");
 
-const playPauseButton =
-  document.getElementById("playPauseButton");
-
-const muteButton =
-  document.getElementById("muteButton");
-
-const videoError =
-  document.getElementById("videoError");
-
 heroVideo.muted = true;
 
-/* SHOW ERROR IF VIDEO CANNOT LOAD */
+heroVideo.play().catch(function() {
+  // Visitors may start playback manually.
+});
 
-heroVideo.addEventListener("error", showVideoError);
+function captureVideoFrame(time, targetIds) {
+  return new Promise(function(resolve) {
+    const video = document.createElement("video");
 
-const heroSource = heroVideo.querySelector("source");
+    video.muted = true;
+    video.preload = "auto";
+    video.playsInline = true;
+    video.src = "hero.mp4";
 
-heroSource.addEventListener("error", showVideoError);
+    let finished = false;
 
-function showVideoError() {
-  videoError.style.display = "flex";
-  playPauseButton.textContent = "VIDEO UNAVAILABLE";
+    function finish() {
+      if (finished) return;
+      finished = true;
+      video.removeAttribute("src");
+      video.load();
+      resolve();
+    }
+
+    video.addEventListener("loadedmetadata", function() {
+      const duration = video.duration;
+
+      if (!Number.isFinite(duration) || duration <= 0) {
+        finish();
+        return;
+      }
+
+      video.currentTime = Math.min(time, duration - 0.1);
+    }, {once:true});
+
+    video.addEventListener("seeked", function() {
+      try {
+        const canvas = document.createElement("canvas");
+
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+
+        const context = canvas.getContext("2d");
+
+        if (!context || !canvas.width || !canvas.height) {
+          finish();
+          return;
+        }
+
+        context.drawImage(video, 0, 0);
+
+        const imageData = canvas.toDataURL("image/jpeg", 0.9);
+
+        targetIds.forEach(function(id) {
+          const image = document.getElementById(id);
+
+          if (image) {
+            image.src = imageData;
+          }
+        });
+      } catch (error) {
+        // The design remains visible if capture fails.
+      }
+
+      finish();
+    }, {once:true});
+
+    video.addEventListener("error", finish, {once:true});
+
+    video.load();
+  });
 }
 
-/* TRY AUTOPLAY */
+window.addEventListener("load", function() {
+  captureVideoFrame(2, [
+    "productImageOne",
+    "galleryOne"
+  ]);
 
-heroVideo.play().catch(function() {
-  playPauseButton.textContent = "PLAY VIDEO";
+  captureVideoFrame(8, [
+    "productImageTwo",
+    "galleryTwo"
+  ]);
+
+  captureVideoFrame(14, [
+    "productImageThree",
+    "galleryThree"
+  ]);
 });
 
-heroVideo.addEventListener("playing", function() {
-  videoError.style.display = "none";
-  playPauseButton.textContent = "PAUSE VIDEO";
-});
-
-heroVideo.addEventListener("pause", function() {
-  playPauseButton.textContent = "PLAY VIDEO";
-});
-
-/* PLAY AND PAUSE BUTTON */
-
-playPauseButton.addEventListener("click", function() {
-  if (heroVideo.paused) {
-    heroVideo.play().catch(function() {
-      playPauseButton.textContent = "PLAY VIDEO";
-    });
-  } else {
-    heroVideo.pause();
-  }
-});
-
-/* MUTE AND UNMUTE BUTTON */
-
-muteButton.addEventListener("click", function() {
-  heroVideo.muted = !heroVideo.muted;
-
-  muteButton.textContent =
-    heroVideo.muted ? "UNMUTE" : "MUTE";
-});
 </script>
 
 </body>
