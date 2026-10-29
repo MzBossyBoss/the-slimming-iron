@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#302151">
-<meta name="description" content="Discover The Slimming Iron and watch the official rotating product presentation.">
+<meta name="description" content="Discover The Slimming Iron and watch its official rotating product presentation.">
 <title>The Slimming Iron | Official Website</title>
 
 <style>
@@ -35,24 +35,18 @@ body {
   overflow-x: hidden;
 }
 
-img,
-video {
+img, video {
   display: block;
   max-width: 100%;
 }
 
-h1,
-h2,
-h3,
-p {
+h1, h2, h3, p {
   margin-top: 0;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   font-family: Georgia, "Times New Roman", serif;
-  font-weight: 400;
+  font-weight: normal;
 }
 
 p {
@@ -98,9 +92,9 @@ summary:focus-visible {
   justify-content: center;
   min-height: 54px;
   padding: 16px 32px;
-  border: 1px solid var(--purple);
   background: var(--purple);
   color: white;
+  border: 1px solid var(--purple);
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 1.5px;
@@ -118,7 +112,7 @@ summary:focus-visible {
   border-color: white;
 }
 
-/* HEADER */
+/* WEBSITE HEADER */
 
 .announcement {
   background: var(--purple);
@@ -186,8 +180,8 @@ summary:focus-visible {
 }
 
 .navigation .nav-cta {
-  border: 1px solid var(--purple);
   padding: 13px 20px;
+  border: 1px solid var(--purple);
 }
 
 .menu-toggle {
@@ -239,24 +233,32 @@ summary:focus-visible {
   font-size: clamp(30px, 5vw, 60px);
 }
 
-/* ROTATING PRODUCT CENTERED ON LEFT PODIUM */
+/* ==========================================
+   ROTATING PRODUCT ON LEFT PODIUM
+
+   TWICE THE PREVIOUS OVERLAY WIDTH
+   CENTERED OVER THE MARBLE PODIUM
+
+   The hero image itself is unchanged.
+========================================== */
 
 .hero-product-overlay {
   position: absolute;
 
   /*
-    The overlay is centered above the
-    small podium on the left side.
-    The positioning is relative to
-    the entire hero image.
+    The overlay is positioned to align
+    the product with the left podium.
+
+    The source video contains surrounding
+    white space, so the video canvas is
+    deliberately wider than the product.
   */
 
-  left: 13%;
-  top: 49%;
-  width: 25%;
-  aspect-ratio: 16 / 9;
+  left: 0%;
+  top: 16%;
+  width: 54%;
 
-  transform: translate(-50%, -50%);
+  aspect-ratio: 16 / 9;
 
   z-index: 4;
   background: transparent;
@@ -264,6 +266,9 @@ summary:focus-visible {
   box-shadow: none;
   overflow: visible;
   pointer-events: none;
+
+  opacity: 1;
+  mix-blend-mode: normal;
 }
 
 .hero-product-overlay canvas {
@@ -275,7 +280,7 @@ summary:focus-visible {
   mix-blend-mode: normal;
 }
 
-/* Hidden source video */
+/* Hidden video supplies the animated frames */
 
 .hero-product-overlay video {
   position: absolute;
@@ -285,23 +290,23 @@ summary:focus-visible {
   pointer-events: none;
 }
 
-/* VIDEO CONTROLS */
+/* HERO VIDEO CONTROLS */
 
 .hero-video-controls {
   position: absolute;
-  left: 6%;
-  bottom: 6%;
-  display: flex;
-  gap: 7px;
+  left: 19%;
+  bottom: 5%;
   z-index: 6;
+  display: flex;
+  gap: 8px;
 }
 
 .hero-video-controls button {
   background: rgba(48, 33, 81, .85);
   color: white;
   border: 1px solid rgba(255,255,255,.45);
-  padding: 8px 13px;
   border-radius: 4px;
+  padding: 8px 13px;
   font-size: 11px;
 }
 
@@ -325,13 +330,13 @@ summary:focus-visible {
 }
 
 .intro p {
-  color: var(--muted);
-  font-size: 18px;
   max-width: 790px;
   margin: 0 auto 32px;
+  color: var(--muted);
+  font-size: 18px;
 }
 
-/* PHOTO PANELS */
+/* PRODUCT IMAGE PANELS */
 
 .photo-panel {
   position: relative;
@@ -343,6 +348,7 @@ summary:focus-visible {
   position: absolute;
   inset: 0;
   z-index: 2;
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -355,10 +361,10 @@ summary:focus-visible {
   z-index: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
+  justify-content: center;
   padding: 30px;
+  text-align: center;
   color: var(--purple);
   background: linear-gradient(145deg, #efe4f1, #bd9ed1);
 }
@@ -373,7 +379,7 @@ summary:focus-visible {
   max-width: 310px;
 }
 
-/* LIFESTYLE */
+/* LIFESTYLE SECTION */
 
 .lifestyle {
   display: grid;
@@ -467,7 +473,7 @@ summary:focus-visible {
   color: #8f6caf;
 }
 
-/* SPA SECTION */
+/* LUXURY SPA SECTION */
 
 .spa-section {
   display: grid;
@@ -600,8 +606,8 @@ summary:focus-visible {
 }
 
 .information-copy p {
-  color: var(--muted);
   margin-bottom: 22px;
+  color: var(--muted);
   font-size: 16px;
 }
 
@@ -612,7 +618,7 @@ summary:focus-visible {
   color: var(--purple);
 }
 
-/* FAQ */
+/* FREQUENTLY ASKED QUESTIONS */
 
 .faq {
   padding: 100px 6%;
@@ -755,18 +761,20 @@ details p {
     aspect-ratio: 16 / 9;
   }
 
-  /* KEEP PRODUCT CENTERED ON LEFT PODIUM */
+  /*
+    Keep the product centered over
+    the left podium on smaller screens.
+  */
 
   .hero-product-overlay {
-    left: 13%;
-    top: 49%;
-    width: 25%;
-    transform: translate(-50%, -50%);
+    left: 0%;
+    top: 16%;
+    width: 54%;
   }
 
   .hero-video-controls {
-    left: 3%;
-    bottom: 3%;
+    left: 14%;
+    bottom: 4%;
     gap: 4px;
   }
 
@@ -846,6 +854,7 @@ details p {
       <div class="brand-name">
         THE SLIMMING IRON
       </div>
+
       <div class="brand-small">
         FAT REMOVAL TECHNOLOGY
       </div>
@@ -877,7 +886,7 @@ details p {
 
 <main>
 
-<!-- HERO IMAGE WITH PRODUCT CENTERED OVER LEFT PODIUM -->
+<!-- HERO IMAGE WITH LARGE ROTATING PRODUCT -->
 
 <section class="hero" id="home">
   <div class="hero-picture">
@@ -885,7 +894,7 @@ details p {
     <img
       id="heroMainImage"
       src="hero-main.png"
-      alt="The Slimming Iron luxury studio product image"
+      alt="The Slimming Iron luxury spa product showcase"
       loading="eager"
       fetchpriority="high"
     >
@@ -902,6 +911,8 @@ details p {
         </p>
       </div>
     </div>
+
+    <!-- LARGER ROTATING PRODUCT ON LEFT PODIUM -->
 
     <div class="hero-product-overlay">
 
@@ -921,8 +932,8 @@ details p {
 
       <canvas
         id="transparentProductCanvas"
-        width="480"
-        height="270"
+        width="640"
+        height="360"
         aria-label="Rotating Slimming Iron with transparent background"
       ></canvas>
 
@@ -944,6 +955,7 @@ details p {
 <!-- INTRODUCTION -->
 
 <section class="intro" id="discover">
+
   <div class="label">
     Introducing The Slimming Iron
   </div>
@@ -965,6 +977,7 @@ details p {
   <a href="#product" class="btn">
     EXPLORE THE DEVICE
   </a>
+
 </section>
 
 <!-- LIFESTYLE IMAGE -->
@@ -979,12 +992,13 @@ details p {
 
     <img
       src="lifestyle.png"
-      alt="Woman in white bathrobe beside The Slimming Iron in a marble bathroom"
+      alt="Woman in a white bathrobe beside The Slimming Iron in a marble bathroom"
       loading="lazy"
     >
   </div>
 
   <div class="lifestyle-copy">
+
     <div class="label">
       The Slimming Iron Collection
     </div>
@@ -1008,8 +1022,8 @@ details p {
     <a href="#features" class="btn">
       DISCOVER MORE
     </a>
-  </div>
 
+  </div>
 </section>
 
 <!-- PROMOTIONAL BANNER -->
@@ -1026,6 +1040,7 @@ details p {
 <section class="product-feature">
 
   <div class="product-copy">
+
     <div class="label">
       Product Spotlight
     </div>
@@ -1050,6 +1065,7 @@ details p {
     <a href="#demo" class="btn">
       WATCH THE PRODUCT
     </a>
+
   </div>
 
   <div class="photo-panel">
@@ -1060,16 +1076,16 @@ details p {
 
     <img
       src="product.png"
-      alt="The Slimming Iron white black and rose gold device"
+      alt="The Slimming Iron white, black and rose gold device"
       loading="lazy"
     >
   </div>
-
 </section>
 
-<!-- EDITORIAL STATEMENT -->
+<!-- EDITORIAL HEADLINE -->
 
 <section class="statement">
+
   <div class="label">
     The Slimming Iron
   </div>
@@ -1078,6 +1094,7 @@ details p {
     A CLOSER LOOK<br>
     <em>AT THE DETAILS.</em>
   </h2>
+
 </section>
 
 <!-- SPA IMAGE -->
@@ -1092,12 +1109,13 @@ details p {
 
     <img
       src="spa-feature.png"
-      alt="The Slimming Iron in a luxury bathroom with lavender towels and flowers"
+      alt="The Slimming Iron in a luxury bathroom"
       loading="lazy"
     >
   </div>
 
   <div class="spa-copy">
+
     <div class="label">
       The Slimming Iron Lifestyle
     </div>
@@ -1122,6 +1140,7 @@ details p {
     <a href="#demo" class="btn">
       SEE THE PRODUCT
     </a>
+
   </div>
 
 </section>
@@ -1170,9 +1189,10 @@ details p {
     </article>
 
   </div>
+
 </section>
 
-<!-- SECOND VIDEO -->
+<!-- SECOND VIDEO SECTION -->
 
 <section class="demo" id="demo">
 
@@ -1215,12 +1235,13 @@ details p {
 
     <img
       src="product.png"
-      alt="The Slimming Iron product displayed on white"
+      alt="The Slimming Iron product photograph"
       loading="lazy"
     >
   </div>
 
   <div class="information-copy">
+
     <div class="label">
       Product Information
     </div>
@@ -1248,13 +1269,15 @@ details p {
     <a href="#coming" class="btn">
       AVAILABILITY INFORMATION
     </a>
+
   </div>
 
 </section>
 
-<!-- FAQ -->
+<!-- FREQUENTLY ASKED QUESTIONS -->
 
 <section class="faq" id="faq">
+
   <div class="faq-inner">
 
     <div class="label">
@@ -1269,8 +1292,8 @@ details p {
       <summary>What is The Slimming Iron?</summary>
       <p>
         The Slimming Iron is a beauty device.
-        This website introduces the product and
-        its design. Additional specifications
+        This website introduces the product
+        and its design. Additional specifications
         will be provided when confirmed.
       </p>
     </details>
@@ -1301,6 +1324,7 @@ details p {
     </details>
 
   </div>
+
 </section>
 
 <!-- COMING SOON -->
@@ -1325,6 +1349,7 @@ details p {
   <a href="#home" class="btn btn-light">
     WATCH THE PRODUCT VIDEO
   </a>
+
 </section>
 
 </main>
@@ -1351,12 +1376,12 @@ details p {
 
 <script>
 
-/* COPYRIGHT */
+/* COPYRIGHT YEAR */
 
 document.getElementById("year").textContent =
   new Date().getFullYear();
 
-/* MOBILE MENU */
+/* MOBILE NAVIGATION */
 
 const menuToggle =
   document.getElementById("menuToggle");
@@ -1376,7 +1401,7 @@ navigation.querySelectorAll("a").forEach(function(link) {
   });
 });
 
-/* MAIN IMAGE ERROR HANDLING */
+/* HERO IMAGE FALLBACK */
 
 const heroMainImage =
   document.getElementById("heroMainImage");
@@ -1391,14 +1416,14 @@ function showHeroFallback() {
 
 heroMainImage.addEventListener("error", showHeroFallback);
 
-if (
-  heroMainImage.complete &&
-  heroMainImage.naturalWidth === 0
-) {
+if (heroMainImage.complete && heroMainImage.naturalWidth === 0) {
   showHeroFallback();
 }
 
-/* TRANSPARENT ROTATING PRODUCT */
+/* ==========================================
+   REMOVE WHITE BACKGROUND FROM VIDEO
+   KEEP THE PRODUCT SOLID AND VISIBLE
+========================================== */
 
 const heroVideo =
   document.getElementById("heroVideo");
@@ -1416,8 +1441,8 @@ const videoPlay =
 const videoMute =
   document.getElementById("videoMute");
 
-const W = 480;
-const H = 270;
+const W = 640;
+const H = 360;
 
 canvas.width = W;
 canvas.height = H;
@@ -1427,11 +1452,11 @@ heroVideo.muted = true;
 let animationTimer = null;
 
 /*
-  Remove only near-white pixels connected
-  to the outer edges of the video.
+  A pixel is eligible for removal when
+  it is close to white and neutral in color.
 
-  This aims to keep white parts of the
-  Slimming Iron visible and opaque.
+  Only qualifying pixels connected to
+  the outside edges of the frame are removed.
 */
 
 function isWhite(data, offset) {
@@ -1444,13 +1469,14 @@ function isWhite(data, offset) {
     g >= 235 &&
     b >= 235 &&
     Math.max(r, g, b) -
-      Math.min(r, g, b) <= 17
+    Math.min(r, g, b) <= 17
   );
 }
 
 function removeBackground(frame) {
   const data = frame.data;
   const count = W * H;
+
   const seen = new Uint8Array(count);
   const queue = new Int32Array(count);
 
@@ -1473,6 +1499,8 @@ function removeBackground(frame) {
     }
   }
 
+  /* Begin at the outside edges */
+
   for (let x = 0; x < W; x++) {
     check(x);
     check((H - 1) * W + x);
@@ -1482,6 +1510,8 @@ function removeBackground(frame) {
     check(y * W);
     check(y * W + W - 1);
   }
+
+  /* Follow only adjoining white pixels */
 
   while (front < back) {
     const pos = queue[front++];
@@ -1498,6 +1528,8 @@ function removeBackground(frame) {
 
   return frame;
 }
+
+/* DRAW ANIMATED FRAMES */
 
 function renderFrame() {
   if (
@@ -1528,7 +1560,9 @@ function renderFrame() {
 }
 
 function startRendering() {
-  if (animationTimer !== null) return;
+  if (animationTimer !== null) {
+    return;
+  }
 
   renderFrame();
 
@@ -1544,6 +1578,8 @@ function stopRendering() {
     animationTimer = null;
   }
 }
+
+/* VIDEO PLAYBACK CONTROLS */
 
 heroVideo.addEventListener("playing", function() {
   videoPlay.textContent = "Pause";
@@ -1573,26 +1609,29 @@ videoPlay.addEventListener("click", function() {
 
 videoMute.addEventListener("click", function() {
   heroVideo.muted = !heroVideo.muted;
+
   videoMute.textContent =
     heroVideo.muted ? "Unmute" : "Mute";
 });
 
-/* OTHER IMAGE ERROR HANDLING */
+/* MISSING IMAGE HANDLING */
 
 document.querySelectorAll(".photo-panel img")
   .forEach(function(image) {
-    function hideMissing() {
+
+    function hideMissingImage() {
       image.style.display = "none";
     }
 
-    image.addEventListener("error", hideMissing);
+    image.addEventListener("error", hideMissingImage);
 
     if (
       image.complete &&
       image.naturalWidth === 0
     ) {
-      hideMissing();
+      hideMissingImage();
     }
+
   });
 
 </script>
