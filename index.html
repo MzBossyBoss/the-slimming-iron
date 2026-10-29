@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#302151">
-<meta name="description" content="Discover The Slimming Iron and watch the official rotating product presentation.">
+<meta name="description" content="Discover The Slimming Iron and watch the official product presentation.">
 <title>The Slimming Iron | Official Website</title>
 
 <style>
@@ -46,7 +46,7 @@ h1, h2, h3, p {
 
 h1, h2, h3 {
   font-family: Georgia, "Times New Roman", serif;
-  font-weight: 400;
+  font-weight: normal;
 }
 
 p {
@@ -100,11 +100,11 @@ summary:focus-visible {
   letter-spacing: 1.5px;
   font-weight: bold;
   text-align: center;
+  transition: background .2s ease;
 }
 
 .btn:hover {
   background: #755394;
-  border-color: #755394;
 }
 
 .btn-light {
@@ -126,9 +126,9 @@ summary:focus-visible {
 }
 
 .site-header {
+  background: white;
   position: relative;
   z-index: 10;
-  background: white;
 }
 
 .header-inner {
@@ -155,11 +155,11 @@ summary:focus-visible {
 }
 
 .brand-small {
-  margin-top: 7px;
   color: #8968a5;
   font-size: 9px;
   letter-spacing: 4px;
   font-weight: bold;
+  margin-top: 7px;
 }
 
 .navigation {
@@ -181,8 +181,8 @@ summary:focus-visible {
 }
 
 .navigation .nav-cta {
-  padding: 13px 20px;
   border: 1px solid var(--purple);
+  padding: 13px 20px;
 }
 
 .menu-toggle {
@@ -193,12 +193,16 @@ summary:focus-visible {
   padding: 12px 15px;
 }
 
-/* MAIN HERO */
+/* ======================================
+   HERO IMAGE WITH TOP RIGHT VIDEO
+   MATCHES YOUR REFERENCE SCREENSHOT
+====================================== */
 
 .hero {
+  position: relative;
   width: 100%;
+  background: #f3eaf1;
   overflow: hidden;
-  background: #302151;
 }
 
 .hero-picture {
@@ -206,13 +210,10 @@ summary:focus-visible {
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  isolation: isolate;
 }
 
 .hero-picture > img {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -223,94 +224,93 @@ summary:focus-visible {
   display: none;
   position: absolute;
   inset: 0;
-  z-index: 1;
+  background: linear-gradient(
+    135deg,
+    #eee4f2,
+    #bca2d0
+  );
   align-items: center;
   justify-content: center;
   padding: 30px;
-  color: white;
   text-align: center;
-  background: linear-gradient(135deg, #302151, #745382);
+  color: var(--purple);
 }
 
-/*
-  ROTATING PRODUCT ON LEFT MARBLE PODIUM
+.hero-picture-fallback h2 {
+  font-size: clamp(30px, 5vw, 60px);
+}
 
-  The canvas has a transparent background,
-  but the device itself remains solid.
+/* SMALL VIDEO OVER HERO IMAGE */
 
-  No blending.
-  No whole-video transparency.
-*/
-
-.hero-product-overlay {
+.hero-mini-video {
   position: absolute;
-  left: 0;
-  top: 16%;
-  width: 54%;
+  top: 0;
+  right: 0;
+  z-index: 3;
+
+  width: 35.5%;
   aspect-ratio: 16 / 9;
-  z-index: 4;
 
-  background: transparent;
-  border: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
   box-shadow: none;
-  overflow: visible;
-  pointer-events: none;
 
-  opacity: 1 !important;
-  mix-blend-mode: normal !important;
-  filter: none !important;
+  background: white;
+  overflow: hidden;
 }
 
-#productCanvas {
+.hero-mini-video video {
   display: block;
   width: 100%;
   height: 100%;
-  background: transparent;
 
-  opacity: 1 !important;
-  mix-blend-mode: normal !important;
-  filter: none !important;
+  object-fit: contain;
+  object-position: center;
+
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: white;
+
+  /* Avoid blowing out the white product */
+  filter: none;
+  transform: none;
 }
 
-#heroVideo {
-  position: absolute;
-  left: -9999px;
-  width: 2px;
-  height: 2px;
-  pointer-events: none;
-}
+/* COMPACT VIDEO CONTROLS */
 
-/* HERO VIDEO CONTROLS */
-
-.hero-video-controls {
+.mini-video-controls {
   position: absolute;
-  left: 19%;
-  bottom: 5%;
-  z-index: 6;
+  right: 7px;
+  bottom: 7px;
   display: flex;
-  gap: 8px;
+  gap: 5px;
+  z-index: 4;
 }
 
-.hero-video-controls button {
-  background: rgba(48,33,81,.9);
+.mini-video-controls button {
+  background: rgba(48,33,81,.82);
   color: white;
-  border: 1px solid rgba(255,255,255,.5);
-  border-radius: 4px;
-  padding: 8px 13px;
-  font-size: 11px;
+  border: 0;
+  border-radius: 3px;
+  padding: 6px 9px;
+  font-size: 10px;
 }
 
 /* INTRODUCTION */
 
 .intro {
+  background: white;
   padding: 110px 6%;
   text-align: center;
-  background: white;
 }
 
 .intro h1 {
   color: var(--purple);
-  font-size: clamp(44px,6vw,83px);
+  font-size: clamp(44px, 6vw, 83px);
   line-height: 1.1;
   margin-bottom: 28px;
 }
@@ -320,13 +320,13 @@ summary:focus-visible {
 }
 
 .intro p {
-  max-width: 790px;
-  margin: 0 auto 32px;
   color: var(--muted);
   font-size: 18px;
+  max-width: 790px;
+  margin: 0 auto 32px;
 }
 
-/* PHOTO PANELS */
+/* WEBSITE PHOTO SECTIONS */
 
 .photo-panel {
   position: relative;
@@ -337,38 +337,38 @@ summary:focus-visible {
 .photo-panel img {
   position: absolute;
   inset: 0;
-  z-index: 2;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
+  z-index: 2;
 }
 
 .image-placeholder {
   position: absolute;
   inset: 0;
-  z-index: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding: 30px;
+  align-items: center;
   text-align: center;
+  background: linear-gradient(145deg, #efe4f1, #bd9ed1);
   color: var(--purple);
-  background: linear-gradient(145deg,#efe4f1,#bd9ed1);
+  padding: 30px;
+  z-index: 1;
 }
 
 .image-placeholder h3 {
-  font-size: clamp(26px,3vw,42px);
+  font-size: clamp(26px, 3vw, 42px);
   margin-bottom: 12px;
 }
 
 .image-placeholder p {
-  max-width: 310px;
   font-size: 13px;
+  max-width: 310px;
 }
 
-/* LIFESTYLE */
+/* LIFESTYLE SECTION */
 
 .lifestyle {
   display: grid;
@@ -382,11 +382,11 @@ summary:focus-visible {
 }
 
 .lifestyle-copy {
+  padding: 85px 10%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: center;
-  padding: 85px 10%;
+  align-items: flex-start;
 }
 
 .lifestyle-copy p {
@@ -395,23 +395,23 @@ summary:focus-visible {
   margin-bottom: 24px;
 }
 
-/* BANNER */
+/* PURPLE BANNER */
 
 .promo-banner {
-  padding: 35px 20px;
   background: var(--purple);
   color: white;
   text-align: center;
+  padding: 35px 20px;
 }
 
 .promo-banner p {
   font-family: Georgia, serif;
-  font-size: clamp(22px,3vw,36px);
+  font-size: clamp(22px, 3vw, 36px);
   line-height: 1.4;
-  margin: 0;
+  margin-bottom: 0;
 }
 
-/* PRODUCT FEATURE */
+/* PRODUCT PHOTO SECTION */
 
 .product-feature {
   display: grid;
@@ -421,11 +421,11 @@ summary:focus-visible {
 }
 
 .product-copy {
+  padding: 90px 11%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: center;
-  padding: 90px 11%;
+  align-items: flex-start;
 }
 
 .product-copy p {
@@ -444,7 +444,7 @@ summary:focus-visible {
   padding: 35px;
 }
 
-/* EDITORIAL */
+/* EDITORIAL HEADLINE */
 
 .statement {
   padding: 110px 6%;
@@ -453,9 +453,9 @@ summary:focus-visible {
 }
 
 .statement h2 {
-  color: var(--deep);
-  font-size: clamp(43px,7vw,100px);
+  font-size: clamp(43px, 7vw, 100px);
   line-height: 1.05;
+  color: var(--deep);
 }
 
 .statement em {
@@ -476,11 +476,11 @@ summary:focus-visible {
 }
 
 .spa-copy {
+  padding: 85px 11%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: center;
-  padding: 85px 11%;
+  align-items: flex-start;
 }
 
 .spa-copy p {
@@ -489,17 +489,17 @@ summary:focus-visible {
   margin-bottom: 26px;
 }
 
-/* FEATURES */
+/* FEATURE CARDS */
 
 .features {
   padding: 105px 6%;
-  text-align: center;
   background: white;
+  text-align: center;
 }
 
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   max-width: 1250px;
   margin: 50px auto 0;
@@ -513,10 +513,10 @@ summary:focus-visible {
 }
 
 .feature-number {
-  margin-bottom: 23px;
   font-family: Georgia, serif;
   font-size: 48px;
   color: #a180b8;
+  margin-bottom: 23px;
 }
 
 .feature-card h3 {
@@ -530,12 +530,12 @@ summary:focus-visible {
   font-size: 15px;
 }
 
-/* SECOND VIDEO */
+/* SECOND VIDEO SECTION */
 
 .demo {
-  padding: 100px 6%;
   background: var(--purple);
   color: white;
+  padding: 100px 6%;
   text-align: center;
 }
 
@@ -564,8 +564,6 @@ summary:focus-visible {
   width: 100%;
   max-height: 610px;
   object-fit: contain;
-  opacity: 1;
-  mix-blend-mode: normal;
   filter: none;
 }
 
@@ -574,8 +572,8 @@ summary:focus-visible {
 .information {
   display: grid;
   grid-template-columns: 47% 53%;
-  min-height: 580px;
   background: var(--ivory);
+  min-height: 580px;
 }
 
 .information .photo-panel {
@@ -589,16 +587,16 @@ summary:focus-visible {
 }
 
 .information-copy {
+  padding: 80px 10%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: center;
-  padding: 80px 10%;
+  align-items: flex-start;
 }
 
 .information-copy p {
-  margin-bottom: 22px;
   color: var(--muted);
+  margin-bottom: 22px;
   font-size: 16px;
 }
 
@@ -632,8 +630,8 @@ details {
 }
 
 summary {
-  color: var(--purple);
   font-size: 17px;
+  color: var(--purple);
   font-weight: bold;
   cursor: pointer;
 }
@@ -647,9 +645,9 @@ details p {
 
 .coming-soon {
   padding: 110px 6%;
-  text-align: center;
+  background: linear-gradient(125deg, #302151, #755493);
   color: white;
-  background: linear-gradient(125deg,#302151,#755493);
+  text-align: center;
 }
 
 .coming-soon .label {
@@ -657,7 +655,7 @@ details p {
 }
 
 .coming-soon h2 {
-  font-size: clamp(43px,6vw,80px);
+  font-size: clamp(43px, 6vw, 80px);
   margin-bottom: 26px;
 }
 
@@ -670,29 +668,29 @@ details p {
 /* FOOTER */
 
 .footer {
-  padding: 60px 6% 30px;
   background: var(--deep);
   color: white;
   text-align: center;
+  padding: 60px 6% 30px;
 }
 
 .footer-logo {
-  margin-bottom: 18px;
   font-family: Georgia, serif;
   font-size: 29px;
   letter-spacing: 3px;
+  margin-bottom: 18px;
 }
 
 .footer p {
-  margin-bottom: 12px;
   color: #e6daec;
   font-size: 12px;
+  margin-bottom: 12px;
 }
 
 .footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.2);
   margin-top: 32px;
   padding-top: 25px;
-  border-top: 1px solid rgba(255,255,255,.2);
 }
 
 /* TABLET */
@@ -740,33 +738,42 @@ details p {
     flex-direction: column;
     width: 100%;
     padding: 25px;
-    gap: 23px;
     background: var(--blush);
+    gap: 23px;
   }
 
   .navigation.open {
     display: flex;
   }
 
+  /* KEEP HERO IMAGE NATURAL */
+
   .hero-picture {
     aspect-ratio: 16 / 9;
   }
 
-  .hero-product-overlay {
-    left: 0;
-    top: 16%;
-    width: 54%;
+  .hero-picture > img {
+    object-fit: cover;
   }
 
-  .hero-video-controls {
-    left: 12%;
-    bottom: 3%;
-    gap: 4px;
+  /* SMALL VIDEO REMAINS TOP RIGHT */
+
+  .hero-mini-video {
+    top: 0;
+    right: 0;
+    width: 36%;
+    aspect-ratio: 16 / 9;
   }
 
-  .hero-video-controls button {
-    padding: 5px 7px;
-    font-size: 9px;
+  .mini-video-controls {
+    bottom: 3px;
+    right: 3px;
+    gap: 3px;
+  }
+
+  .mini-video-controls button {
+    padding: 3px 5px;
+    font-size: 8px;
   }
 
   .intro {
@@ -823,11 +830,17 @@ details p {
   html {
     scroll-behavior: auto;
   }
+
+  .btn {
+    transition: none;
+  }
 }
 </style>
 </head>
 
 <body>
+
+<!-- HEADER -->
 
 <div class="announcement">
   THE SLIMMING IRON | OFFICIAL WEBSITE
@@ -837,8 +850,13 @@ details p {
   <div class="header-inner">
 
     <a href="#home" class="brand">
-      <div class="brand-name">THE SLIMMING IRON</div>
-      <div class="brand-small">FAT REMOVAL TECHNOLOGY</div>
+      <div class="brand-name">
+        THE SLIMMING IRON
+      </div>
+
+      <div class="brand-small">
+        FAT REMOVAL TECHNOLOGY
+      </div>
     </a>
 
     <button
@@ -865,7 +883,7 @@ details p {
 
 <main>
 
-<!-- HERO -->
+<!-- HERO IMAGE WITH VIDEO IN UPPER RIGHT -->
 
 <section class="hero" id="home">
 
@@ -874,7 +892,7 @@ details p {
     <img
       id="heroMainImage"
       src="hero-main.png"
-      alt="The Slimming Iron luxury spa image"
+      alt="The Slimming Iron luxury product photograph"
       loading="eager"
       fetchpriority="high"
     >
@@ -885,13 +903,16 @@ details p {
     >
       <div>
         <h2>THE SLIMMING IRON</h2>
-        <p>Upload hero-main.png to display the hero image.</p>
+        <p>
+          Upload your generated image
+          as hero-main.png
+        </p>
       </div>
     </div>
 
-    <!-- SOLID ROTATING PRODUCT -->
+    <!-- SMALL CORNER VIDEO -->
 
-    <div class="hero-product-overlay">
+    <div class="hero-mini-video">
 
       <video
         id="heroVideo"
@@ -900,25 +921,30 @@ details p {
         loop
         playsinline
         preload="auto"
-        crossorigin="anonymous"
-        aria-label="Rotating Slimming Iron"
+        aria-label="Rotating Slimming Iron product video"
       >
         <source src="hero.mp4" type="video/mp4">
         Your browser does not support video.
       </video>
 
-      <canvas
-        id="productCanvas"
-        width="480"
-        height="270"
-        aria-label="Rotating Slimming Iron with a transparent background"
-      ></canvas>
+      <div class="mini-video-controls">
+        <button
+          id="videoPlay"
+          type="button"
+          aria-label="Pause video"
+        >
+          Pause
+        </button>
 
-    </div>
+        <button
+          id="videoMute"
+          type="button"
+          aria-label="Unmute video"
+        >
+          Unmute
+        </button>
+      </div>
 
-    <div class="hero-video-controls">
-      <button id="videoPlay" type="button">Pause</button>
-      <button id="videoMute" type="button">Unmute</button>
     </div>
 
   </div>
@@ -939,10 +965,12 @@ details p {
   </h1>
 
   <p>
-    Meet The Slimming Iron, a distinctive beauty device
-    with a modern silhouette, contrasting finishes,
-    and striking metallic detailing. Explore the device
-    and see it in motion through the official product presentation.
+    Meet The Slimming Iron, a distinctive
+    beauty device with a modern silhouette,
+    contrasting finishes, and striking
+    metallic detailing.
+    Explore the device and see it in motion
+    through the official product presentation.
   </p>
 
   <a href="#product" class="btn">
@@ -951,11 +979,12 @@ details p {
 
 </section>
 
-<!-- LIFESTYLE -->
+<!-- LIFESTYLE IMAGE -->
 
 <section class="lifestyle" id="product">
 
   <div class="photo-panel">
+
     <div class="image-placeholder">
       <h3>The Slimming Iron</h3>
       <p>Lifestyle product photograph</p>
@@ -966,11 +995,14 @@ details p {
       alt="Woman in a white bathrobe beside The Slimming Iron in a marble bathroom"
       loading="lazy"
     >
+
   </div>
 
   <div class="lifestyle-copy">
 
-    <div class="label">The Slimming Iron Collection</div>
+    <div class="label">
+      The Slimming Iron Collection
+    </div>
 
     <h2 class="title">
       A Beautiful Introduction to Modern Design.
@@ -983,17 +1015,20 @@ details p {
     </p>
 
     <p>
-      Discover the device in an upscale bathroom setting
-      and get a closer look at its modern appearance.
+      Discover the device in an upscale
+      bathroom setting and get a closer
+      look at its modern appearance.
     </p>
 
-    <a href="#features" class="btn">DISCOVER MORE</a>
+    <a href="#features" class="btn">
+      DISCOVER MORE
+    </a>
 
   </div>
 
 </section>
 
-<!-- BANNER -->
+<!-- PROMOTIONAL BANNER -->
 
 <section class="promo-banner">
   <p>
@@ -1008,26 +1043,35 @@ details p {
 
   <div class="product-copy">
 
-    <div class="label">Product Spotlight</div>
+    <div class="label">
+      Product Spotlight
+    </div>
 
-    <h2 class="title">THE SLIMMING IRON</h2>
+    <h2 class="title">
+      THE SLIMMING IRON
+    </h2>
 
     <p>
-      Discover the device's distinctive ring-shaped opening,
-      white exterior, black control surface,
-      and rose gold detailing.
+      Discover the device's distinctive
+      ring-shaped opening, white exterior,
+      black control surface, and
+      rose gold detailing.
     </p>
 
     <p>
-      Explore its design through the official
-      product photographs and rotating presentation.
+      Explore its design through
+      the official product photographs
+      and rotating presentation.
     </p>
 
-    <a href="#demo" class="btn">WATCH THE PRODUCT</a>
+    <a href="#demo" class="btn">
+      WATCH THE PRODUCT
+    </a>
 
   </div>
 
   <div class="photo-panel">
+
     <div class="image-placeholder">
       <h3>The Slimming Iron</h3>
       <p>Official product photograph</p>
@@ -1035,29 +1079,35 @@ details p {
 
     <img
       src="product.png"
-      alt="The Slimming Iron white black and rose gold beauty device"
+      alt="The Slimming Iron white black and rose gold device"
       loading="lazy"
     >
+
   </div>
 
 </section>
 
-<!-- EDITORIAL -->
+<!-- EDITORIAL HEADLINE -->
 
 <section class="statement">
-  <div class="label">The Slimming Iron</div>
+
+  <div class="label">
+    The Slimming Iron
+  </div>
 
   <h2>
     A CLOSER LOOK<br>
     <em>AT THE DETAILS.</em>
   </h2>
+
 </section>
 
-<!-- SPA -->
+<!-- LUXURY SPA IMAGE -->
 
 <section class="spa-section">
 
   <div class="photo-panel">
+
     <div class="image-placeholder">
       <h3>Luxury Beauty Setting</h3>
       <p>The Slimming Iron lifestyle presentation</p>
@@ -1068,38 +1118,51 @@ details p {
       alt="The Slimming Iron in a luxury bathroom with lavender towels and flowers"
       loading="lazy"
     >
+
   </div>
 
   <div class="spa-copy">
 
-    <div class="label">The Slimming Iron Lifestyle</div>
+    <div class="label">
+      The Slimming Iron Lifestyle
+    </div>
 
-    <h2 class="title">An Elegant Beauty Device.</h2>
+    <h2 class="title">
+      An Elegant Beauty Device.
+    </h2>
 
     <p>
       White marble, soft lavender accents,
-      and an elegant bathroom setting complement
-      The Slimming Iron's modern product design.
+      and an elegant bathroom setting
+      complement The Slimming Iron's
+      modern product design.
     </p>
 
     <p>
-      Explore how the device looks within a beautifully
-      styled personal care environment.
+      Explore how the device looks
+      within a beautifully styled
+      personal care environment.
     </p>
 
-    <a href="#demo" class="btn">SEE THE PRODUCT</a>
+    <a href="#demo" class="btn">
+      SEE THE PRODUCT
+    </a>
 
   </div>
 
 </section>
 
-<!-- FEATURES -->
+<!-- PRODUCT FEATURES -->
 
 <section class="features" id="features">
 
-  <div class="label">Product Overview</div>
+  <div class="label">
+    Product Overview
+  </div>
 
-  <h2 class="title">Discover the Details.</h2>
+  <h2 class="title">
+    Discover the Details.
+  </h2>
 
   <div class="feature-grid">
 
@@ -1116,8 +1179,9 @@ details p {
       <div class="feature-number">02</div>
       <h3>Elegant Finish</h3>
       <p>
-        White and black surfaces are complemented
-        by rose gold metallic accents.
+        White and black surfaces are
+        complemented by rose gold
+        metallic accents.
       </p>
     </article>
 
@@ -1125,8 +1189,9 @@ details p {
       <div class="feature-number">03</div>
       <h3>Visible Controls</h3>
       <p>
-        Take a closer look at the controls
-        displayed on the upper surface.
+        Take a closer look at the
+        controls displayed on
+        the upper surface.
       </p>
     </article>
 
@@ -1134,13 +1199,17 @@ details p {
 
 </section>
 
-<!-- SECOND VIDEO -->
+<!-- SECOND VIDEO SECTION -->
 
 <section class="demo" id="demo">
 
-  <div class="label">Official Product Presentation</div>
+  <div class="label">
+    Official Product Presentation
+  </div>
 
-  <h2 class="title">See The Slimming Iron in Motion.</h2>
+  <h2 class="title">
+    See The Slimming Iron in Motion.
+  </h2>
 
   <p>
     Watch the device rotate to explore
@@ -1148,6 +1217,7 @@ details p {
   </p>
 
   <div class="demo-video">
+
     <video
       controls
       playsinline
@@ -1157,15 +1227,17 @@ details p {
       <source src="hero.mp4" type="video/mp4">
       Your browser does not support video.
     </video>
+
   </div>
 
 </section>
 
-<!-- INFORMATION -->
+<!-- PRODUCT DETAILS -->
 
 <section class="information">
 
   <div class="photo-panel">
+
     <div class="image-placeholder">
       <h3>The Slimming Iron</h3>
       <p>Product detail image</p>
@@ -1173,22 +1245,28 @@ details p {
 
     <img
       src="product.png"
-      alt="The Slimming Iron product photograph"
+      alt="The Slimming Iron product displayed on white"
       loading="lazy"
     >
+
   </div>
 
   <div class="information-copy">
 
-    <div class="label">Product Information</div>
+    <div class="label">
+      Product Information
+    </div>
 
-    <h2 class="title">The Slimming Iron Up Close.</h2>
+    <h2 class="title">
+      The Slimming Iron Up Close.
+    </h2>
 
     <p>
       This official presentation introduces
       The Slimming Iron's exterior appearance.
-      Detailed operating information, specifications
-      and precautions will be published when confirmed.
+      Detailed operating information,
+      specifications and precautions
+      will be published when confirmed.
     </p>
 
     <ul>
@@ -1213,16 +1291,21 @@ details p {
 
   <div class="faq-inner">
 
-    <div class="label">Questions &amp; Answers</div>
+    <div class="label">
+      Questions & Answers
+    </div>
 
-    <h2 class="title">Frequently Asked Questions</h2>
+    <h2 class="title">
+      Frequently Asked Questions
+    </h2>
 
     <details>
       <summary>What is The Slimming Iron?</summary>
       <p>
         The Slimming Iron is a beauty device.
-        This website introduces the product and its design.
-        Additional specifications will be provided when confirmed.
+        This website introduces the product and
+        its design. Additional specifications
+        will be provided when confirmed.
       </p>
     </details>
 
@@ -1238,14 +1321,16 @@ details p {
       <summary>Are operating instructions available?</summary>
       <p>
         Detailed operating instructions and
-        safety information will be added when available.
+        safety information will be added
+        when available.
       </p>
     </details>
 
     <details>
       <summary>Where can I find availability information?</summary>
       <p>
-        Visit www.slimmingiron.com for future announcements.
+        Visit www.slimmingiron.com for
+        future announcements.
       </p>
     </details>
 
@@ -1257,9 +1342,13 @@ details p {
 
 <section class="coming-soon" id="coming">
 
-  <div class="label">The Slimming Iron</div>
+  <div class="label">
+    The Slimming Iron
+  </div>
 
-  <h2>COMING SOON.</h2>
+  <h2>
+    COMING SOON.
+  </h2>
 
   <p>
     Discover The Slimming Iron.
@@ -1280,7 +1369,9 @@ details p {
 
 <footer class="footer">
 
-  <div class="footer-logo">THE SLIMMING IRON</div>
+  <div class="footer-logo">
+    THE SLIMMING IRON
+  </div>
 
   <p>OFFICIAL PRODUCT WEBSITE</p>
   <p>www.slimmingiron.com</p>
@@ -1295,6 +1386,7 @@ details p {
 </footer>
 
 <script>
+
 /* COPYRIGHT */
 
 document.getElementById("year").textContent =
@@ -1302,8 +1394,11 @@ document.getElementById("year").textContent =
 
 /* MOBILE NAVIGATION */
 
-const menuToggle = document.getElementById("menuToggle");
-const navigation = document.getElementById("navigation");
+const menuToggle =
+  document.getElementById("menuToggle");
+
+const navigation =
+  document.getElementById("navigation");
 
 menuToggle.addEventListener("click", function() {
   const isOpen = navigation.classList.toggle("open");
@@ -1319,619 +1414,102 @@ navigation.querySelectorAll("a").forEach(function(link) {
 
 /* HERO IMAGE FALLBACK */
 
-const heroMainImage = document.getElementById("heroMainImage");
-const heroImageFallback = document.getElementById("heroImageFallback");
+const heroMainImage =
+  document.getElementById("heroMainImage");
 
-function showHeroFallback() {
+const heroImageFallback =
+  document.getElementById("heroImageFallback");
+
+function showHeroImageFallback() {
   heroMainImage.style.display = "none";
   heroImageFallback.style.display = "flex";
 }
 
-heroMainImage.addEventListener("error", showHeroFallback);
+heroMainImage.addEventListener(
+  "error",
+  showHeroImageFallback
+);
 
-if (heroMainImage.complete && heroMainImage.naturalWidth === 0) {
-  showHeroFallback();
+if (
+  heroMainImage.complete &&
+  heroMainImage.naturalWidth === 0
+) {
+  showHeroImageFallback();
 }
 
-/* ===================================================
-   ROTATING PRODUCT BACKGROUND REMOVAL
+/* SMALL HERO VIDEO CONTROLS */
 
-   Revised technique:
+const heroVideo =
+  document.getElementById("heroVideo");
 
-   1. Find colored product outlines.
-   2. Connect small gaps in the outline.
-   3. Keep the main product shape fully opaque.
-   4. Make the area outside that shape transparent.
-   5. Attempt to clear the ring's center opening.
+const videoPlay =
+  document.getElementById("videoPlay");
 
-   Unlike the previous code, individual white
-   product pixels do not repeatedly change alpha.
-
-   All pixels inside the detected product shape
-   are fully opaque.
-=================================================== */
-
-const heroVideo = document.getElementById("heroVideo");
-const productCanvas = document.getElementById("productCanvas");
-const outputContext = productCanvas.getContext("2d");
-
-const videoPlay = document.getElementById("videoPlay");
-const videoMute = document.getElementById("videoMute");
-
-const W = 480;
-const H = 270;
-const COUNT = W * H;
-
-productCanvas.width = W;
-productCanvas.height = H;
-
-const sourceCanvas = document.createElement("canvas");
-sourceCanvas.width = W;
-sourceCanvas.height = H;
-
-const sourceContext = sourceCanvas.getContext("2d", {
-  willReadFrequently: true
-});
+const videoMute =
+  document.getElementById("videoMute");
 
 heroVideo.muted = true;
 
-let rendering = false;
-let animationId = null;
-let previousVideoTime = -1;
-let previousDrawTime = 0;
-
-/*
-  This identifies pixels that are noticeably
-  different from the white video background.
-
-  The white portions of the device are later
-  preserved by filling the detected shape.
-*/
-
-function createInitialShape(data) {
-  const shape = new Uint8Array(COUNT);
-
-  for (let p = 0; p < COUNT; p++) {
-    const i = p * 4;
-
-    const r = data[i];
-    const g = data[i + 1];
-    const b = data[i + 2];
-
-    const darkest = Math.min(r, g, b);
-
-    /*
-      Strong contrast identifies the black
-      control surface, metallic borders,
-      and visible product shadows.
-    */
-
-    shape[p] = darkest < 238 ? 1 : 0;
-  }
-
-  return shape;
-}
-
-/*
-  Expand a binary shape by one pixel.
-
-  Used to connect small gaps in the
-  product's outline.
-*/
-
-function dilate(mask) {
-  const result = new Uint8Array(COUNT);
-
-  for (let y = 0; y < H; y++) {
-    for (let x = 0; x < W; x++) {
-      const p = y * W + x;
-
-      if (mask[p]) {
-        result[p] = 1;
-        continue;
-      }
-
-      let found = false;
-
-      for (let dy = -1; dy <= 1 && !found; dy++) {
-        const yy = y + dy;
-
-        if (yy < 0 || yy >= H) continue;
-
-        for (let dx = -1; dx <= 1; dx++) {
-          const xx = x + dx;
-
-          if (xx < 0 || xx >= W) continue;
-
-          if (mask[yy * W + xx]) {
-            found = true;
-            break;
-          }
-        }
-      }
-
-      result[p] = found ? 1 : 0;
-    }
-  }
-
-  return result;
-}
-
-/*
-  Shrink a binary shape by one pixel.
-
-  Applied after expansion to smooth
-  small gaps without enlarging the
-  whole object permanently.
-*/
-
-function erode(mask) {
-  const result = new Uint8Array(COUNT);
-
-  for (let y = 0; y < H; y++) {
-    for (let x = 0; x < W; x++) {
-      const p = y * W + x;
-
-      let solid = true;
-
-      for (let dy = -1; dy <= 1 && solid; dy++) {
-        const yy = y + dy;
-
-        if (yy < 0 || yy >= H) {
-          solid = false;
-          break;
-        }
-
-        for (let dx = -1; dx <= 1; dx++) {
-          const xx = x + dx;
-
-          if (xx < 0 || xx >= W || !mask[yy * W + xx]) {
-            solid = false;
-            break;
-          }
-        }
-      }
-
-      result[p] = solid ? 1 : 0;
-    }
-  }
-
-  return result;
-}
-
-/*
-  Keep only the largest connected
-  foreground region.
-
-  This helps eliminate isolated video
-  compression noise around the product.
-*/
-
-function largestComponent(mask) {
-  const visited = new Uint8Array(COUNT);
-  const queue = new Int32Array(COUNT);
-
-  let best = null;
-  let bestLength = 0;
-
-  for (let start = 0; start < COUNT; start++) {
-    if (!mask[start] || visited[start]) continue;
-
-    let head = 0;
-    let tail = 0;
-
-    queue[tail++] = start;
-    visited[start] = 1;
-
-    while (head < tail) {
-      const p = queue[head++];
-      const x = p % W;
-      const y = Math.floor(p / W);
-
-      function add(n) {
-        if (visited[n] || !mask[n]) return;
-        visited[n] = 1;
-        queue[tail++] = n;
-      }
-
-      if (x > 0) add(p - 1);
-      if (x < W - 1) add(p + 1);
-      if (y > 0) add(p - W);
-      if (y < H - 1) add(p + W);
-    }
-
-    if (tail > bestLength) {
-      bestLength = tail;
-      best = queue.slice(0, tail);
-    }
-  }
-
-  const result = new Uint8Array(COUNT);
-
-  if (best) {
-    for (let i = 0; i < best.length; i++) {
-      result[best[i]] = 1;
-    }
-  }
-
-  return result;
-}
-
-/*
-  Fill enclosed regions inside the
-  main product silhouette.
-
-  This is the important change:
-  the white body is treated as part
-  of the device rather than as background.
-*/
-
-function fillShape(mask) {
-  const exterior = new Uint8Array(COUNT);
-  const queue = new Int32Array(COUNT);
-
-  let head = 0;
-  let tail = 0;
-
-  function add(p) {
-    if (mask[p] || exterior[p]) return;
-
-    exterior[p] = 1;
-    queue[tail++] = p;
-  }
-
-  for (let x = 0; x < W; x++) {
-    add(x);
-    add((H - 1) * W + x);
-  }
-
-  for (let y = 0; y < H; y++) {
-    add(y * W);
-    add(y * W + W - 1);
-  }
-
-  while (head < tail) {
-    const p = queue[head++];
-    const x = p % W;
-    const y = Math.floor(p / W);
-
-    if (x > 0) add(p - 1);
-    if (x < W - 1) add(p + 1);
-    if (y > 0) add(p - W);
-    if (y < H - 1) add(p + W);
-  }
-
-  const filled = new Uint8Array(COUNT);
-
-  for (let p = 0; p < COUNT; p++) {
-    filled[p] = exterior[p] ? 0 : 1;
-  }
-
-  return filled;
-}
-
-/*
-  Identify an enclosed region corresponding
-  to the ring opening.
-
-  This is still approximate, because
-  the source video has no alpha channel.
-*/
-
-function findRingHole(data, originalShape, solidShape) {
-  const visited = new Uint8Array(COUNT);
-  const queue = new Int32Array(COUNT);
-
-  let bestRegion = null;
-  let bestArea = 0;
-
-  for (let start = 0; start < COUNT; start++) {
-    if (
-      visited[start] ||
-      !solidShape[start] ||
-      originalShape[start]
-    ) {
-      continue;
-    }
-
-    let head = 0;
-    let tail = 0;
-
-    let minX = W;
-    let minY = H;
-    let maxX = 0;
-    let maxY = 0;
-
-    visited[start] = 1;
-    queue[tail++] = start;
-
-    while (head < tail) {
-      const p = queue[head++];
-      const x = p % W;
-      const y = Math.floor(p / W);
-
-      minX = Math.min(minX, x);
-      minY = Math.min(minY, y);
-      maxX = Math.max(maxX, x);
-      maxY = Math.max(maxY, y);
-
-      function add(n) {
-        if (
-          visited[n] ||
-          originalShape[n] ||
-          !solidShape[n]
-        ) {
-          return;
-        }
-
-        visited[n] = 1;
-        queue[tail++] = n;
-      }
-
-      if (x > 0) add(p - 1);
-      if (x < W - 1) add(p + 1);
-      if (y > 0) add(p - W);
-      if (y < H - 1) add(p + W);
-    }
-
-    const area = tail;
-    const boxWidth = maxX - minX + 1;
-    const boxHeight = maxY - minY + 1;
-    const aspect = boxWidth / boxHeight;
-
-    const looksLikeRingHole =
-      area > COUNT * 0.008 &&
-      area < COUNT * 0.18 &&
-      aspect > 0.45 &&
-      aspect < 2.2 &&
-      minY < H * 0.8;
-
-    if (looksLikeRingHole && area > bestArea) {
-      bestArea = area;
-      bestRegion = queue.slice(0, tail);
-    }
-  }
-
-  const hole = new Uint8Array(COUNT);
-
-  if (bestRegion) {
-    for (let i = 0; i < bestRegion.length; i++) {
-      hole[bestRegion[i]] = 1;
-    }
-  }
-
-  return hole;
-}
-
-/*
-  Build a mask for the object.
-
-  The final device is opaque wherever
-  it belongs to the detected silhouette.
-*/
-
-function createProductMask(data) {
-  const initial = createInitialShape(data);
-
-  /*
-    Connect small gaps before finding
-    the main object.
-  */
-
-  let closed = dilate(initial);
-  closed = dilate(closed);
-  closed = erode(closed);
-  closed = erode(closed);
-
-  const main = largestComponent(closed);
-
-  const solid = fillShape(main);
-
-  const hole = findRingHole(data, closed, solid);
-
-  for (let p = 0; p < COUNT; p++) {
-    if (hole[p]) {
-      solid[p] = 0;
-    }
-  }
-
-  return solid;
-}
-
-/*
-  Do not gradually fade interior pixels.
-
-  Pixels belonging to the product are
-  completely opaque.
-
-  Only the immediate boundary gets
-  limited antialiasing for a cleaner edge.
-*/
-
-function applyMask(frame, mask) {
-  const data = frame.data;
-
-  for (let y = 0; y < H; y++) {
-    for (let x = 0; x < W; x++) {
-      const p = y * W + x;
-      const i = p * 4;
-
-      if (mask[p]) {
-        data[i + 3] = 255;
-        continue;
-      }
-
-      /*
-        Slight edge smoothing is applied
-        only outside the solid silhouette.
-      */
-
-      let neighbors = 0;
-
-      if (x > 0 && mask[p - 1]) neighbors++;
-      if (x < W - 1 && mask[p + 1]) neighbors++;
-      if (y > 0 && mask[p - W]) neighbors++;
-      if (y < H - 1 && mask[p + W]) neighbors++;
-
-      data[i + 3] = neighbors >= 3 ? 96 : 0;
-    }
-  }
-
-  return frame;
-}
-
-/* DRAW VIDEO FRAME */
-
-function drawFrame() {
-  if (
-    heroVideo.readyState < 2 ||
-    !sourceContext ||
-    !outputContext
-  ) {
-    return;
-  }
-
-  try {
-    sourceContext.clearRect(0, 0, W, H);
-
-    sourceContext.drawImage(
-      heroVideo,
-      0,
-      0,
-      W,
-      H
-    );
-
-    const frame = sourceContext.getImageData(
-      0, 0, W, H
-    );
-
-    const mask = createProductMask(frame.data);
-
-    const result = applyMask(frame, mask);
-
-    outputContext.clearRect(0, 0, W, H);
-
-    outputContext.putImageData(
-      result,
-      0,
-      0
-    );
-  } catch (error) {
-    stopRendering();
-
-    console.warn(
-      "Video background processing unavailable.",
-      error
-    );
-  }
-}
-
-/* VIDEO ANIMATION */
-
-function animationLoop(timestamp) {
-  if (!rendering) return;
-
-  if (
-    !heroVideo.paused &&
-    heroVideo.readyState >= 2 &&
-    timestamp - previousDrawTime >= 65
-  ) {
-    if (heroVideo.currentTime !== previousVideoTime) {
-      previousVideoTime = heroVideo.currentTime;
-      previousDrawTime = timestamp;
-      drawFrame();
-    }
-  }
-
-  if (rendering) {
-    animationId = requestAnimationFrame(animationLoop);
-  }
-}
-
-function startRendering() {
-  if (rendering) return;
-
-  rendering = true;
-  previousVideoTime = -1;
-  previousDrawTime = 0;
-
-  animationId = requestAnimationFrame(animationLoop);
-}
-
-function stopRendering() {
-  rendering = false;
-
-  if (animationId !== null) {
-    cancelAnimationFrame(animationId);
-    animationId = null;
-  }
-}
-
-/* VIDEO CONTROLS */
-
-function updateVideoButtons() {
-  videoPlay.textContent =
-    heroVideo.paused ? "Play" : "Pause";
-
-  videoMute.textContent =
-    heroVideo.muted ? "Unmute" : "Mute";
-}
-
-heroVideo.addEventListener("playing", function() {
-  updateVideoButtons();
-  startRendering();
+heroVideo.play().catch(function() {
+  videoPlay.textContent = "Play";
 });
-
-heroVideo.addEventListener("pause", function() {
-  updateVideoButtons();
-  stopRendering();
-});
-
-heroVideo.addEventListener(
-  "volumechange",
-  updateVideoButtons
-);
-
-heroVideo.addEventListener(
-  "ended",
-  stopRendering
-);
 
 videoPlay.addEventListener("click", function() {
   if (heroVideo.paused) {
-    heroVideo.play().catch(updateVideoButtons);
+    heroVideo.play().then(function() {
+      videoPlay.textContent = "Pause";
+      videoPlay.setAttribute(
+        "aria-label",
+        "Pause video"
+      );
+    }).catch(function() {
+      videoPlay.textContent = "Play";
+    });
   } else {
     heroVideo.pause();
+    videoPlay.textContent = "Play";
+    videoPlay.setAttribute(
+      "aria-label",
+      "Play video"
+    );
   }
 });
 
 videoMute.addEventListener("click", function() {
   heroVideo.muted = !heroVideo.muted;
-  updateVideoButtons();
+
+  videoMute.textContent =
+    heroVideo.muted ? "Unmute" : "Mute";
+
+  videoMute.setAttribute(
+    "aria-label",
+    heroVideo.muted ? "Unmute video" : "Mute video"
+  );
 });
 
-heroVideo.play().catch(updateVideoButtons);
+heroVideo.addEventListener("playing", function() {
+  videoPlay.textContent = "Pause";
+});
 
-updateVideoButtons();
+heroVideo.addEventListener("pause", function() {
+  videoPlay.textContent = "Play";
+});
 
 /* MISSING IMAGE HANDLING */
 
 document.querySelectorAll(".photo-panel img")
   .forEach(function(image) {
 
-    function hideMissing() {
+    function hideMissingImage() {
       image.style.display = "none";
     }
 
-    image.addEventListener("error", hideMissing);
+    image.addEventListener("error", hideMissingImage);
 
-    if (
-      image.complete &&
-      image.naturalWidth === 0
-    ) {
-      hideMissing();
+    if (image.complete && image.naturalWidth === 0) {
+      hideMissingImage();
     }
+
   });
 
 </script>
