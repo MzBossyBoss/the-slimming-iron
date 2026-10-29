@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#302151">
-<meta name="description" content="Discover The Slimming Iron and watch the official product presentation.">
+<meta name="description" content="Discover The Slimming Iron and watch the official rotating product presentation.">
 <title>The Slimming Iron | Official Website</title>
 
 <style>
@@ -35,16 +35,22 @@ body {
   overflow-x: hidden;
 }
 
-img, video {
+img,
+video {
   display: block;
   max-width: 100%;
 }
 
-h1, h2, h3, p {
+h1,
+h2,
+h3,
+p {
   margin-top: 0;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: normal;
 }
@@ -100,7 +106,6 @@ summary:focus-visible {
   letter-spacing: 1.5px;
   font-weight: bold;
   text-align: center;
-  transition: background .2s ease;
 }
 
 .btn:hover {
@@ -193,10 +198,7 @@ summary:focus-visible {
   padding: 12px 15px;
 }
 
-/* ======================================
-   HERO IMAGE WITH TOP RIGHT VIDEO
-   MATCHES YOUR REFERENCE SCREENSHOT
-====================================== */
+/* MAIN HERO IMAGE */
 
 .hero {
   position: relative;
@@ -213,7 +215,6 @@ summary:focus-visible {
 }
 
 .hero-picture > img {
-  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -240,7 +241,7 @@ summary:focus-visible {
   font-size: clamp(30px, 5vw, 60px);
 }
 
-/* SMALL VIDEO OVER HERO IMAGE */
+/* TRANSLUCENT STYLE CORNER VIDEO */
 
 .hero-mini-video {
   position: absolute;
@@ -253,12 +254,19 @@ summary:focus-visible {
 
   margin: 0;
   padding: 0;
-  border: none;
+  border: 0;
   border-radius: 0;
   box-shadow: none;
 
-  background: white;
+  background: transparent;
   overflow: hidden;
+
+  /*
+   The video is blended with the hero picture.
+   White becomes visually neutral while dark
+   areas remain visible.
+  */
+  mix-blend-mode: multiply;
 }
 
 .hero-mini-video video {
@@ -271,32 +279,33 @@ summary:focus-visible {
 
   margin: 0;
   padding: 0;
-  border: none;
+  border: 0;
   border-radius: 0;
-  background: white;
 
-  /* Avoid blowing out the white product */
+  background: transparent;
   filter: none;
   transform: none;
 }
 
-/* COMPACT VIDEO CONTROLS */
+/* VIDEO CONTROLS */
+/* PLACED OUTSIDE BLENDING EFFECT */
 
 .mini-video-controls {
   position: absolute;
-  right: 7px;
-  bottom: 7px;
+  top: calc(35.5vw * 9 / 16);
+  right: 0;
+  z-index: 5;
   display: flex;
-  gap: 5px;
-  z-index: 4;
+  gap: 6px;
+  padding: 6px 8px;
 }
 
 .mini-video-controls button {
-  background: rgba(48,33,81,.82);
+  background: rgba(48,33,81,.85);
   color: white;
   border: 0;
   border-radius: 3px;
-  padding: 6px 9px;
+  padding: 6px 10px;
   font-size: 10px;
 }
 
@@ -326,7 +335,7 @@ summary:focus-visible {
   margin: 0 auto 32px;
 }
 
-/* WEBSITE PHOTO SECTIONS */
+/* WEBSITE IMAGES */
 
 .photo-panel {
   position: relative;
@@ -335,6 +344,7 @@ summary:focus-visible {
 }
 
 .photo-panel img {
+  display: block;
   position: absolute;
   inset: 0;
   width: 100%;
@@ -352,7 +362,11 @@ summary:focus-visible {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: linear-gradient(145deg, #efe4f1, #bd9ed1);
+  background: linear-gradient(
+    145deg,
+    #efe4f1,
+    #bd9ed1
+  );
   color: var(--purple);
   padding: 30px;
   z-index: 1;
@@ -395,7 +409,7 @@ summary:focus-visible {
   margin-bottom: 24px;
 }
 
-/* PURPLE BANNER */
+/* PROMOTIONAL BANNER */
 
 .promo-banner {
   background: var(--purple);
@@ -411,7 +425,7 @@ summary:focus-visible {
   margin-bottom: 0;
 }
 
-/* PRODUCT PHOTO SECTION */
+/* PRODUCT FEATURE */
 
 .product-feature {
   display: grid;
@@ -444,7 +458,7 @@ summary:focus-visible {
   padding: 35px;
 }
 
-/* EDITORIAL HEADLINE */
+/* EDITORIAL STATEMENT */
 
 .statement {
   padding: 110px 6%;
@@ -530,7 +544,8 @@ summary:focus-visible {
   font-size: 15px;
 }
 
-/* SECOND VIDEO SECTION */
+/* SECOND VIDEO */
+/* LEFT NORMAL AND UNCHANGED */
 
 .demo {
   background: var(--purple);
@@ -567,7 +582,7 @@ summary:focus-visible {
   filter: none;
 }
 
-/* PRODUCT INFORMATION */
+/* INFORMATION */
 
 .information {
   display: grid;
@@ -645,7 +660,11 @@ details p {
 
 .coming-soon {
   padding: 110px 6%;
-  background: linear-gradient(125deg, #302151, #755493);
+  background: linear-gradient(
+    125deg,
+    #302151,
+    #755493
+  );
   color: white;
   text-align: center;
 }
@@ -746,17 +765,9 @@ details p {
     display: flex;
   }
 
-  /* KEEP HERO IMAGE NATURAL */
-
   .hero-picture {
     aspect-ratio: 16 / 9;
   }
-
-  .hero-picture > img {
-    object-fit: cover;
-  }
-
-  /* SMALL VIDEO REMAINS TOP RIGHT */
 
   .hero-mini-video {
     top: 0;
@@ -766,14 +777,15 @@ details p {
   }
 
   .mini-video-controls {
-    bottom: 3px;
-    right: 3px;
+    top: calc(36vw * 9 / 16);
+    right: 0;
+    padding: 3px;
     gap: 3px;
   }
 
   .mini-video-controls button {
-    padding: 3px 5px;
     font-size: 8px;
+    padding: 3px 5px;
   }
 
   .intro {
@@ -830,17 +842,11 @@ details p {
   html {
     scroll-behavior: auto;
   }
-
-  .btn {
-    transition: none;
-  }
 }
 </style>
 </head>
 
 <body>
-
-<!-- HEADER -->
 
 <div class="announcement">
   THE SLIMMING IRON | OFFICIAL WEBSITE
@@ -853,7 +859,6 @@ details p {
       <div class="brand-name">
         THE SLIMMING IRON
       </div>
-
       <div class="brand-small">
         FAT REMOVAL TECHNOLOGY
       </div>
@@ -875,7 +880,9 @@ details p {
       <a href="#features">Highlights</a>
       <a href="#demo">Watch Video</a>
       <a href="#faq">FAQ</a>
-      <a href="#coming" class="nav-cta">Coming Soon</a>
+      <a href="#coming" class="nav-cta">
+        Coming Soon
+      </a>
     </nav>
 
   </div>
@@ -883,7 +890,7 @@ details p {
 
 <main>
 
-<!-- HERO IMAGE WITH VIDEO IN UPPER RIGHT -->
+<!-- MAIN IMAGE WITH BLENDED VIDEO -->
 
 <section class="hero" id="home">
 
@@ -892,7 +899,7 @@ details p {
     <img
       id="heroMainImage"
       src="hero-main.png"
-      alt="The Slimming Iron luxury product photograph"
+      alt="The Slimming Iron luxury product image"
       loading="eager"
       fetchpriority="high"
     >
@@ -904,16 +911,15 @@ details p {
       <div>
         <h2>THE SLIMMING IRON</h2>
         <p>
-          Upload your generated image
-          as hero-main.png
+          Upload hero-main.png to display
+          the featured product image.
         </p>
       </div>
     </div>
 
-    <!-- SMALL CORNER VIDEO -->
+    <!-- BLENDED VIDEO IN TOP RIGHT -->
 
     <div class="hero-mini-video">
-
       <video
         id="heroVideo"
         autoplay
@@ -921,30 +927,20 @@ details p {
         loop
         playsinline
         preload="auto"
-        aria-label="Rotating Slimming Iron product video"
+        aria-label="The Slimming Iron rotating product"
       >
         <source src="hero.mp4" type="video/mp4">
         Your browser does not support video.
       </video>
+    </div>
 
-      <div class="mini-video-controls">
-        <button
-          id="videoPlay"
-          type="button"
-          aria-label="Pause video"
-        >
-          Pause
-        </button>
-
-        <button
-          id="videoMute"
-          type="button"
-          aria-label="Unmute video"
-        >
-          Unmute
-        </button>
-      </div>
-
+    <div class="mini-video-controls">
+      <button id="videoPlay" type="button">
+        Pause
+      </button>
+      <button id="videoMute" type="button">
+        Unmute
+      </button>
     </div>
 
   </div>
@@ -992,7 +988,7 @@ details p {
 
     <img
       src="lifestyle.png"
-      alt="Woman in a white bathrobe beside The Slimming Iron in a marble bathroom"
+      alt="Woman in white bathrobe beside The Slimming Iron in a marble bathroom"
       loading="lazy"
     >
 
@@ -1028,7 +1024,7 @@ details p {
 
 </section>
 
-<!-- PROMOTIONAL BANNER -->
+<!-- PURPLE BANNER -->
 
 <section class="promo-banner">
   <p>
@@ -1037,7 +1033,7 @@ details p {
   </p>
 </section>
 
-<!-- PRODUCT PHOTO -->
+<!-- PRODUCT FEATURE -->
 
 <section class="product-feature">
 
@@ -1102,7 +1098,7 @@ details p {
 
 </section>
 
-<!-- LUXURY SPA IMAGE -->
+<!-- SPA IMAGE -->
 
 <section class="spa-section">
 
@@ -1232,7 +1228,7 @@ details p {
 
 </section>
 
-<!-- PRODUCT DETAILS -->
+<!-- PRODUCT INFORMATION -->
 
 <section class="information">
 
@@ -1402,7 +1398,10 @@ const navigation =
 
 menuToggle.addEventListener("click", function() {
   const isOpen = navigation.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.setAttribute(
+    "aria-expanded",
+    String(isOpen)
+  );
 });
 
 navigation.querySelectorAll("a").forEach(function(link) {
@@ -1437,7 +1436,7 @@ if (
   showHeroImageFallback();
 }
 
-/* SMALL HERO VIDEO CONTROLS */
+/* CORNER VIDEO CONTROLS */
 
 const heroVideo =
   document.getElementById("heroVideo");
@@ -1458,33 +1457,19 @@ videoPlay.addEventListener("click", function() {
   if (heroVideo.paused) {
     heroVideo.play().then(function() {
       videoPlay.textContent = "Pause";
-      videoPlay.setAttribute(
-        "aria-label",
-        "Pause video"
-      );
     }).catch(function() {
       videoPlay.textContent = "Play";
     });
   } else {
     heroVideo.pause();
     videoPlay.textContent = "Play";
-    videoPlay.setAttribute(
-      "aria-label",
-      "Play video"
-    );
   }
 });
 
 videoMute.addEventListener("click", function() {
   heroVideo.muted = !heroVideo.muted;
-
   videoMute.textContent =
     heroVideo.muted ? "Unmute" : "Mute";
-
-  videoMute.setAttribute(
-    "aria-label",
-    heroVideo.muted ? "Unmute video" : "Mute video"
-  );
 });
 
 heroVideo.addEventListener("playing", function() {
@@ -1506,13 +1491,15 @@ document.querySelectorAll(".photo-panel img")
 
     image.addEventListener("error", hideMissingImage);
 
-    if (image.complete && image.naturalWidth === 0) {
+    if (
+      image.complete &&
+      image.naturalWidth === 0
+    ) {
       hideMissingImage();
     }
 
   });
 
 </script>
-
 </body>
 </html>
