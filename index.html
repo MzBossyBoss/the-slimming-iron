@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#302151">
-<meta name="description" content="Discover The Slimming Iron and watch the official rotating product presentation.">
+<meta name="description" content="Discover The Slimming Iron and its official product presentation.">
 <title>The Slimming Iron | Official Website</title>
 
 <style>
@@ -29,30 +29,24 @@ html {
 
 body {
   margin: 0;
-  background: white;
-  color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: white;
   overflow-x: hidden;
 }
 
-img,
-video {
+img, video {
   display: block;
   max-width: 100%;
 }
 
-h1,
-h2,
-h3,
-p {
+h1, h2, h3, p {
   margin-top: 0;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   font-family: Georgia, "Times New Roman", serif;
-  font-weight: normal;
+  font-weight: 400;
 }
 
 p {
@@ -65,8 +59,8 @@ a {
 }
 
 button {
-  cursor: pointer;
   font: inherit;
+  cursor: pointer;
 }
 
 button:focus-visible,
@@ -118,7 +112,7 @@ summary:focus-visible {
   border-color: white;
 }
 
-/* HEADER */
+/* TOP HEADER */
 
 .announcement {
   background: var(--purple);
@@ -131,9 +125,9 @@ summary:focus-visible {
 }
 
 .site-header {
-  background: white;
   position: relative;
   z-index: 10;
+  background: white;
 }
 
 .header-inner {
@@ -160,11 +154,11 @@ summary:focus-visible {
 }
 
 .brand-small {
+  margin-top: 7px;
   color: #8968a5;
   font-size: 9px;
   letter-spacing: 4px;
   font-weight: bold;
-  margin-top: 7px;
 }
 
 .navigation {
@@ -198,13 +192,15 @@ summary:focus-visible {
   padding: 12px 15px;
 }
 
-/* MAIN HERO IMAGE */
+/* =========================================
+   MAIN HERO IMAGE
+========================================= */
 
 .hero {
   position: relative;
   width: 100%;
-  background: #f3eaf1;
   overflow: hidden;
+  background: #f3eaf1;
 }
 
 .hero-picture {
@@ -227,11 +223,11 @@ summary:focus-visible {
   display: none;
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #eee4f2, #bca2d0);
   align-items: center;
   justify-content: center;
-  padding: 30px;
   text-align: center;
+  padding: 30px;
+  background: linear-gradient(135deg, #eee4f2, #bca2d0);
   color: var(--purple);
 }
 
@@ -239,52 +235,44 @@ summary:focus-visible {
   font-size: clamp(30px, 5vw, 60px);
 }
 
-/* ==========================================
-   ROTATING PRODUCT ON LEFT PODIUM
-   ========================================== */
+/* =========================================
+   ROTATING SLIMMING IRON
+   POSITIONED ON THE LEFT PODIUM
+========================================= */
 
 .hero-product-overlay {
   position: absolute;
 
   /*
-    Position the rotating device over
-    the small podium on the left.
+    Position the video product on the
+    raised display podium at the left.
+    Percentages scale with the hero image.
   */
 
-  left: 2%;
-  bottom: 19%;
+  left: 1%;
+  top: 29%;
+  width: 30%;
 
-  width: 38%;
   aspect-ratio: 16 / 9;
 
   z-index: 4;
-  overflow: visible;
-
   background: transparent;
   border: none;
   box-shadow: none;
-
+  overflow: visible;
   pointer-events: none;
 }
-
-/*
-  Transparent canvas displays the
-  rotating device after removal
-  of the edge-connected white background.
-*/
 
 .hero-product-overlay canvas {
   display: block;
   width: 100%;
   height: 100%;
   background: transparent;
+  opacity: 1;
+  mix-blend-mode: normal;
 }
 
-/*
-  Original video remains hidden
-  but supplies the moving frames
-  to the transparent canvas.
-*/
+/* Video supplies animation frames */
 
 .hero-product-overlay video {
   position: absolute;
@@ -294,14 +282,14 @@ summary:focus-visible {
   pointer-events: none;
 }
 
-/* PLAY AND SOUND CONTROLS */
+/* VIDEO BUTTONS */
 
 .hero-video-controls {
   position: absolute;
-  left: 7%;
-  bottom: 5%;
+  left: 8%;
+  bottom: 8%;
   display: flex;
-  gap: 8px;
+  gap: 7px;
   z-index: 6;
 }
 
@@ -309,21 +297,17 @@ summary:focus-visible {
   background: rgba(48,33,81,.85);
   color: white;
   border: 1px solid rgba(255,255,255,.45);
+  padding: 8px 13px;
   border-radius: 4px;
-  padding: 9px 14px;
   font-size: 11px;
-}
-
-.hero-video-controls button:hover {
-  background: var(--purple);
 }
 
 /* INTRODUCTION */
 
 .intro {
-  background: white;
   padding: 110px 6%;
   text-align: center;
+  background: white;
 }
 
 .intro h1 {
@@ -344,7 +328,7 @@ summary:focus-visible {
   margin: 0 auto 32px;
 }
 
-/* IMAGE SECTIONS */
+/* PHOTO PANELS */
 
 .photo-panel {
   position: relative;
@@ -355,25 +339,25 @@ summary:focus-visible {
 .photo-panel img {
   position: absolute;
   inset: 0;
+  z-index: 2;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  z-index: 2;
 }
 
 .image-placeholder {
   position: absolute;
   inset: 0;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: linear-gradient(145deg, #efe4f1, #bd9ed1);
-  color: var(--purple);
   padding: 30px;
-  z-index: 1;
+  color: var(--purple);
+  background: linear-gradient(145deg, #efe4f1, #bd9ed1);
 }
 
 .image-placeholder h3 {
@@ -400,11 +384,11 @@ summary:focus-visible {
 }
 
 .lifestyle-copy {
-  padding: 85px 10%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  padding: 85px 10%;
 }
 
 .lifestyle-copy p {
@@ -413,23 +397,23 @@ summary:focus-visible {
   margin-bottom: 24px;
 }
 
-/* PURPLE BANNER */
+/* PROMOTIONAL BANNER */
 
 .promo-banner {
-  background: var(--purple);
-  color: white;
-  text-align: center;
   padding: 35px 20px;
+  text-align: center;
+  color: white;
+  background: var(--purple);
 }
 
 .promo-banner p {
   font-family: Georgia, serif;
   font-size: clamp(22px, 3vw, 36px);
   line-height: 1.4;
-  margin-bottom: 0;
+  margin: 0;
 }
 
-/* PRODUCT PHOTO SECTION */
+/* PRODUCT SECTION */
 
 .product-feature {
   display: grid;
@@ -439,11 +423,11 @@ summary:focus-visible {
 }
 
 .product-copy {
-  padding: 90px 11%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  padding: 90px 11%;
 }
 
 .product-copy p {
@@ -462,7 +446,7 @@ summary:focus-visible {
   padding: 35px;
 }
 
-/* EDITORIAL HEADLINE */
+/* EDITORIAL STATEMENT */
 
 .statement {
   padding: 110px 6%;
@@ -471,9 +455,9 @@ summary:focus-visible {
 }
 
 .statement h2 {
+  color: var(--deep);
   font-size: clamp(43px, 7vw, 100px);
   line-height: 1.05;
-  color: var(--deep);
 }
 
 .statement em {
@@ -494,11 +478,11 @@ summary:focus-visible {
 }
 
 .spa-copy {
-  padding: 85px 11%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  padding: 85px 11%;
 }
 
 .spa-copy p {
@@ -511,8 +495,8 @@ summary:focus-visible {
 
 .features {
   padding: 105px 6%;
-  background: white;
   text-align: center;
+  background: white;
 }
 
 .feature-grid {
@@ -531,10 +515,10 @@ summary:focus-visible {
 }
 
 .feature-number {
+  margin-bottom: 23px;
   font-family: Georgia, serif;
   font-size: 48px;
   color: #a180b8;
-  margin-bottom: 23px;
 }
 
 .feature-card h3 {
@@ -548,13 +532,13 @@ summary:focus-visible {
   font-size: 15px;
 }
 
-/* SECOND PRODUCT VIDEO */
+/* SECOND VIDEO SECTION */
 
 .demo {
-  background: var(--purple);
-  color: white;
   padding: 100px 6%;
   text-align: center;
+  background: var(--purple);
+  color: white;
 }
 
 .demo .label {
@@ -590,8 +574,8 @@ summary:focus-visible {
 .information {
   display: grid;
   grid-template-columns: 47% 53%;
-  background: var(--ivory);
   min-height: 580px;
+  background: var(--ivory);
 }
 
 .information .photo-panel {
@@ -605,11 +589,11 @@ summary:focus-visible {
 }
 
 .information-copy {
-  padding: 80px 10%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  padding: 80px 10%;
 }
 
 .information-copy p {
@@ -648,8 +632,8 @@ details {
 }
 
 summary {
-  font-size: 17px;
   color: var(--purple);
+  font-size: 17px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -663,9 +647,9 @@ details p {
 
 .coming-soon {
   padding: 110px 6%;
-  background: linear-gradient(125deg, #302151, #755493);
-  color: white;
   text-align: center;
+  color: white;
+  background: linear-gradient(125deg, #302151, #755493);
 }
 
 .coming-soon .label {
@@ -686,29 +670,29 @@ details p {
 /* FOOTER */
 
 .footer {
+  padding: 60px 6% 30px;
+  text-align: center;
   background: var(--deep);
   color: white;
-  text-align: center;
-  padding: 60px 6% 30px;
 }
 
 .footer-logo {
+  margin-bottom: 18px;
   font-family: Georgia, serif;
   font-size: 29px;
   letter-spacing: 3px;
-  margin-bottom: 18px;
 }
 
 .footer p {
+  margin-bottom: 12px;
   color: #e6daec;
   font-size: 12px;
-  margin-bottom: 12px;
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,.2);
   margin-top: 32px;
   padding-top: 25px;
+  border-top: 1px solid rgba(255,255,255,.2);
 }
 
 /* TABLET */
@@ -756,8 +740,8 @@ details p {
     flex-direction: column;
     width: 100%;
     padding: 25px;
-    background: var(--blush);
     gap: 23px;
+    background: var(--blush);
   }
 
   .navigation.open {
@@ -768,17 +752,20 @@ details p {
     aspect-ratio: 16 / 9;
   }
 
-  /* SMALL ROTATING PRODUCT ON LEFT PODIUM */
+  /*
+    Keep the rotating product on the
+    podium at smaller screen sizes.
+  */
 
   .hero-product-overlay {
     left: 1%;
-    bottom: 19%;
-    width: 40%;
+    top: 29%;
+    width: 30%;
   }
 
   .hero-video-controls {
-    left: 3%;
-    bottom: 3%;
+    left: 4%;
+    bottom: 4%;
     gap: 4px;
   }
 
@@ -858,7 +845,6 @@ details p {
       <div class="brand-name">
         THE SLIMMING IRON
       </div>
-
       <div class="brand-small">
         FAT REMOVAL TECHNOLOGY
       </div>
@@ -890,19 +876,15 @@ details p {
 
 <main>
 
-<!-- ======================================
-     HERO IMAGE
-     ROTATING PRODUCT ON LEFT PODIUM
-====================================== -->
+<!-- MAIN HERO WITH ROTATING PRODUCT ON PODIUM -->
 
 <section class="hero" id="home">
-
   <div class="hero-picture">
 
     <img
       id="heroMainImage"
       src="hero-main.png"
-      alt="The Slimming Iron luxury studio product image"
+      alt="The Slimming Iron luxury studio image"
       loading="eager"
       fetchpriority="high"
     >
@@ -920,7 +902,7 @@ details p {
       </div>
     </div>
 
-    <!-- ROTATING PRODUCT ABOVE LEFT PODIUM -->
+    <!-- ROTATING PRODUCT ON LEFT PODIUM -->
 
     <div class="hero-product-overlay">
 
@@ -940,33 +922,28 @@ details p {
 
       <canvas
         id="transparentProductCanvas"
-        width="640"
-        height="360"
-        aria-label="Rotating Slimming Iron with transparent background"
+        width="480"
+        height="270"
+        aria-label="Rotating Slimming Iron"
       ></canvas>
 
     </div>
-
-    <!-- VIDEO CONTROLS -->
 
     <div class="hero-video-controls">
       <button id="videoPlay" type="button">
         Pause
       </button>
-
       <button id="videoMute" type="button">
         Unmute
       </button>
     </div>
 
   </div>
-
 </section>
 
 <!-- INTRODUCTION -->
 
 <section class="intro" id="discover">
-
   <div class="label">
     Introducing The Slimming Iron
   </div>
@@ -988,7 +965,6 @@ details p {
   <a href="#product" class="btn">
     EXPLORE THE DEVICE
   </a>
-
 </section>
 
 <!-- LIFESTYLE IMAGE -->
@@ -996,7 +972,6 @@ details p {
 <section class="lifestyle" id="product">
 
   <div class="photo-panel">
-
     <div class="image-placeholder">
       <h3>The Slimming Iron</h3>
       <p>Lifestyle product photograph</p>
@@ -1007,11 +982,9 @@ details p {
       alt="Woman in white bathrobe beside The Slimming Iron in a marble bathroom"
       loading="lazy"
     >
-
   </div>
 
   <div class="lifestyle-copy">
-
     <div class="label">
       The Slimming Iron Collection
     </div>
@@ -1035,7 +1008,6 @@ details p {
     <a href="#features" class="btn">
       DISCOVER MORE
     </a>
-
   </div>
 
 </section>
@@ -1054,7 +1026,6 @@ details p {
 <section class="product-feature">
 
   <div class="product-copy">
-
     <div class="label">
       Product Spotlight
     </div>
@@ -1079,11 +1050,9 @@ details p {
     <a href="#demo" class="btn">
       WATCH THE PRODUCT
     </a>
-
   </div>
 
   <div class="photo-panel">
-
     <div class="image-placeholder">
       <h3>The Slimming Iron</h3>
       <p>Official product photograph</p>
@@ -1094,15 +1063,13 @@ details p {
       alt="The Slimming Iron white black and rose gold device"
       loading="lazy"
     >
-
   </div>
 
 </section>
 
-<!-- EDITORIAL HEADLINE -->
+<!-- EDITORIAL STATEMENT -->
 
 <section class="statement">
-
   <div class="label">
     The Slimming Iron
   </div>
@@ -1111,7 +1078,6 @@ details p {
     A CLOSER LOOK<br>
     <em>AT THE DETAILS.</em>
   </h2>
-
 </section>
 
 <!-- SPA IMAGE -->
@@ -1119,7 +1085,6 @@ details p {
 <section class="spa-section">
 
   <div class="photo-panel">
-
     <div class="image-placeholder">
       <h3>Luxury Beauty Setting</h3>
       <p>The Slimming Iron lifestyle presentation</p>
@@ -1130,11 +1095,9 @@ details p {
       alt="The Slimming Iron in a luxury bathroom with lavender towels and flowers"
       loading="lazy"
     >
-
   </div>
 
   <div class="spa-copy">
-
     <div class="label">
       The Slimming Iron Lifestyle
     </div>
@@ -1159,7 +1122,6 @@ details p {
     <a href="#demo" class="btn">
       SEE THE PRODUCT
     </a>
-
   </div>
 
 </section>
@@ -1208,7 +1170,6 @@ details p {
     </article>
 
   </div>
-
 </section>
 
 <!-- SECOND VIDEO SECTION -->
@@ -1229,7 +1190,6 @@ details p {
   </p>
 
   <div class="demo-video">
-
     <video
       controls
       playsinline
@@ -1239,7 +1199,6 @@ details p {
       <source src="hero.mp4" type="video/mp4">
       Your browser does not support video.
     </video>
-
   </div>
 
 </section>
@@ -1249,7 +1208,6 @@ details p {
 <section class="information">
 
   <div class="photo-panel">
-
     <div class="image-placeholder">
       <h3>The Slimming Iron</h3>
       <p>Product detail image</p>
@@ -1260,11 +1218,9 @@ details p {
       alt="The Slimming Iron product displayed on white"
       loading="lazy"
     >
-
   </div>
 
   <div class="information-copy">
-
     <div class="label">
       Product Information
     </div>
@@ -1292,7 +1248,6 @@ details p {
     <a href="#coming" class="btn">
       AVAILABILITY INFORMATION
     </a>
-
   </div>
 
 </section>
@@ -1300,7 +1255,6 @@ details p {
 <!-- FAQ -->
 
 <section class="faq" id="faq">
-
   <div class="faq-inner">
 
     <div class="label">
@@ -1347,7 +1301,6 @@ details p {
     </details>
 
   </div>
-
 </section>
 
 <!-- COMING SOON -->
@@ -1372,7 +1325,6 @@ details p {
   <a href="#home" class="btn btn-light">
     WATCH THE PRODUCT VIDEO
   </a>
-
 </section>
 
 </main>
@@ -1404,7 +1356,7 @@ details p {
 document.getElementById("year").textContent =
   new Date().getFullYear();
 
-/* MOBILE NAVIGATION */
+/* MOBILE MENU */
 
 const menuToggle =
   document.getElementById("menuToggle");
@@ -1413,11 +1365,8 @@ const navigation =
   document.getElementById("navigation");
 
 menuToggle.addEventListener("click", function() {
-  const isOpen = navigation.classList.toggle("open");
-  menuToggle.setAttribute(
-    "aria-expanded",
-    String(isOpen)
-  );
+  const open = navigation.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(open));
 });
 
 navigation.querySelectorAll("a").forEach(function(link) {
@@ -1427,7 +1376,7 @@ navigation.querySelectorAll("a").forEach(function(link) {
   });
 });
 
-/* HERO IMAGE FALLBACK */
+/* MAIN IMAGE ERROR */
 
 const heroMainImage =
   document.getElementById("heroMainImage");
@@ -1435,39 +1384,35 @@ const heroMainImage =
 const heroImageFallback =
   document.getElementById("heroImageFallback");
 
-function showHeroImageFallback() {
+function showHeroFallback() {
   heroMainImage.style.display = "none";
   heroImageFallback.style.display = "flex";
 }
 
-heroMainImage.addEventListener(
-  "error",
-  showHeroImageFallback
-);
+heroMainImage.addEventListener("error", showHeroFallback);
 
 if (
   heroMainImage.complete &&
   heroMainImage.naturalWidth === 0
 ) {
-  showHeroImageFallback();
+  showHeroFallback();
 }
 
-/* ==========================================
-   REMOVE VIDEO WHITE BACKGROUND
-   WITHOUT MAKING THE WHOLE PRODUCT FADE
-   ========================================== */
+/* ======================================
+   TRANSPARENT PRODUCT VIDEO
+   ON THE LEFT PODIUM
+====================================== */
 
 const heroVideo =
   document.getElementById("heroVideo");
 
-const productCanvas =
+const canvas =
   document.getElementById("transparentProductCanvas");
 
-const productContext =
-  productCanvas.getContext(
-    "2d",
-    { willReadFrequently: true }
-  );
+const ctx =
+  canvas.getContext("2d", {
+    willReadFrequently: true
+  });
 
 const videoPlay =
   document.getElementById("videoPlay");
@@ -1475,263 +1420,185 @@ const videoPlay =
 const videoMute =
   document.getElementById("videoMute");
 
+const W = 480;
+const H = 270;
+
+canvas.width = W;
+canvas.height = H;
+
 heroVideo.muted = true;
 
-/*
-  Process a modest resolution so the
-  website remains reasonably responsive.
-*/
-
-const frameWidth = 480;
-const frameHeight = 270;
-
-productCanvas.width = frameWidth;
-productCanvas.height = frameHeight;
-
-let renderTimer = null;
+let animationTimer = null;
 
 /*
-  Identify pixels that closely match
-  a white or near-white background.
-  Only remove regions connected to
-  the edges of the video frame.
+  Remove only near-white pixels connected
+  to the edges of each video frame.
 
-  This is a conservative approximation.
-  It protects interior white areas better
-  than applying transparency to all whites.
+  Keep the product's interior white surfaces
+  opaque rather than fading the entire video.
 */
 
-function isBackgroundPixel(data, index) {
-  const r = data[index];
-  const g = data[index + 1];
-  const b = data[index + 2];
-
-  const highest = Math.max(r, g, b);
-  const lowest = Math.min(r, g, b);
+function isWhite(data, offset) {
+  const r = data[offset];
+  const g = data[offset + 1];
+  const b = data[offset + 2];
 
   return (
     r >= 235 &&
     g >= 235 &&
     b >= 235 &&
-    highest - lowest <= 17
+    Math.max(r, g, b) -
+      Math.min(r, g, b) <= 17
   );
 }
 
-function removeWhiteBackground(imageData) {
+function removeBackground(frame) {
+  const data = frame.data;
+  const count = W * H;
 
-  const pixels = imageData.data;
-  const w = imageData.width;
-  const h = imageData.height;
-  const total = w * h;
+  const seen = new Uint8Array(count);
+  const queue = new Int32Array(count);
 
-  const visited = new Uint8Array(total);
-  const queue = new Int32Array(total);
+  let front = 0;
+  let back = 0;
 
-  let head = 0;
-  let tail = 0;
-
-  function addPixel(position) {
+  function check(position) {
     if (
       position < 0 ||
-      position >= total ||
-      visited[position]
+      position >= count ||
+      seen[position]
     ) {
       return;
     }
 
-    visited[position] = 1;
+    seen[position] = 1;
 
-    if (
-      isBackgroundPixel(
-        pixels,
-        position * 4
-      )
-    ) {
-      queue[tail++] = position;
+    if (isWhite(data, position * 4)) {
+      queue[back++] = position;
     }
   }
 
-  /* BEGIN FROM THE OUTER FRAME */
-
-  for (let x = 0; x < w; x++) {
-    addPixel(x);
-    addPixel((h - 1) * w + x);
+  for (let x = 0; x < W; x++) {
+    check(x);
+    check((H - 1) * W + x);
   }
 
-  for (let y = 0; y < h; y++) {
-    addPixel(y * w);
-    addPixel(y * w + w - 1);
+  for (let y = 0; y < H; y++) {
+    check(y * W);
+    check(y * W + W - 1);
   }
 
-  /* REMOVE CONNECTED WHITE BACKGROUND */
+  while (front < back) {
+    const pos = queue[front++];
+    const x = pos % W;
+    const y = Math.floor(pos / W);
 
-  while (head < tail) {
+    data[pos * 4 + 3] = 0;
 
-    const position = queue[head++];
-    const x = position % w;
-    const y = Math.floor(position / w);
-
-    pixels[position * 4 + 3] = 0;
-
-    if (x > 0) {
-      addPixel(position - 1);
-    }
-
-    if (x < w - 1) {
-      addPixel(position + 1);
-    }
-
-    if (y > 0) {
-      addPixel(position - w);
-    }
-
-    if (y < h - 1) {
-      addPixel(position + w);
-    }
+    if (x > 0) check(pos - 1);
+    if (x < W - 1) check(pos + 1);
+    if (y > 0) check(pos - W);
+    if (y < H - 1) check(pos + W);
   }
 
-  return imageData;
+  return frame;
 }
 
-function renderTransparentProduct() {
-
+function renderFrame() {
   if (
-    !heroVideo.paused &&
-    heroVideo.readyState >= 2
+    heroVideo.paused ||
+    heroVideo.readyState < 2
   ) {
-
-    try {
-
-      productContext.clearRect(
-        0,
-        0,
-        frameWidth,
-        frameHeight
-      );
-
-      productContext.drawImage(
-        heroVideo,
-        0,
-        0,
-        frameWidth,
-        frameHeight
-      );
-
-      const imageData =
-        productContext.getImageData(
-          0,
-          0,
-          frameWidth,
-          frameHeight
-        );
-
-      productContext.putImageData(
-        removeWhiteBackground(imageData),
-        0,
-        0
-      );
-
-    } catch (error) {
-      /*
-        Canvas processing can fail if the
-        video is served without permission
-        for reading pixel data.
-      */
-      stopTransparentRendering();
-      return;
-    }
-
-  }
-
-}
-
-function startTransparentRendering() {
-
-  if (renderTimer !== null) {
     return;
   }
 
-  renderTransparentProduct();
+  try {
+    ctx.clearRect(0, 0, W, H);
+    ctx.drawImage(heroVideo, 0, 0, W, H);
 
-  renderTimer = setInterval(
-    renderTransparentProduct,
+    const frame = ctx.getImageData(0, 0, W, H);
+
+    ctx.putImageData(
+      removeBackground(frame),
+      0,
+      0
+    );
+  } catch (error) {
+    stopRendering();
+    console.warn(
+      "Transparent video processing unavailable.",
+      error
+    );
+  }
+}
+
+function startRendering() {
+  if (animationTimer !== null) return;
+
+  renderFrame();
+
+  animationTimer = setInterval(
+    renderFrame,
     1000 / 18
   );
 }
 
-function stopTransparentRendering() {
-
-  if (renderTimer !== null) {
-    clearInterval(renderTimer);
-    renderTimer = null;
+function stopRendering() {
+  if (animationTimer !== null) {
+    clearInterval(animationTimer);
+    animationTimer = null;
   }
-
 }
 
 heroVideo.addEventListener("playing", function() {
   videoPlay.textContent = "Pause";
-  startTransparentRendering();
+  startRendering();
 });
 
 heroVideo.addEventListener("pause", function() {
   videoPlay.textContent = "Play";
-  stopTransparentRendering();
+  stopRendering();
 });
 
-heroVideo.addEventListener("ended", function() {
-  stopTransparentRendering();
-});
+heroVideo.addEventListener("ended", stopRendering);
 
 heroVideo.play().catch(function() {
   videoPlay.textContent = "Play";
 });
 
 videoPlay.addEventListener("click", function() {
-
   if (heroVideo.paused) {
-
     heroVideo.play().catch(function() {
       videoPlay.textContent = "Play";
     });
-
   } else {
-
     heroVideo.pause();
-
   }
-
 });
 
 videoMute.addEventListener("click", function() {
-
   heroVideo.muted = !heroVideo.muted;
-
   videoMute.textContent =
     heroVideo.muted ? "Unmute" : "Mute";
-
 });
 
-/* MISSING IMAGE HANDLING */
+/* MISSING PRODUCT IMAGES */
 
 document.querySelectorAll(".photo-panel img")
   .forEach(function(image) {
 
-    function hideMissingImage() {
+    function hideMissing() {
       image.style.display = "none";
     }
 
-    image.addEventListener(
-      "error",
-      hideMissingImage
-    );
+    image.addEventListener("error", hideMissing);
 
     if (
       image.complete &&
       image.naturalWidth === 0
     ) {
-      hideMissingImage();
+      hideMissing();
     }
-
   });
 
 </script>
