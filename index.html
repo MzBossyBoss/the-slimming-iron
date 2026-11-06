@@ -199,26 +199,30 @@ summary:focus-visible {
 }
 
 /* MAIN HERO VIDEO */
+/* CORRECTED STANDARD HERO SIZE */
 
 .hero {
   position: relative;
   width: 100%;
-  background: #f3eaf1;
+  background: white;
   overflow: hidden;
 }
 
 .hero-picture {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: clamp(300px, 38vw, 560px);
   overflow: hidden;
+  background: white;
 }
 
 .hero-picture > video {
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
+  background: white;
 }
 
 .hero-picture-fallback {
@@ -261,11 +265,6 @@ summary:focus-visible {
   background: transparent;
   overflow: hidden;
 
-  /*
-   The video is blended with the hero picture.
-   White becomes visually neutral while dark
-   areas remain visible.
-  */
   mix-blend-mode: multiply;
 }
 
@@ -288,7 +287,6 @@ summary:focus-visible {
 }
 
 /* VIDEO CONTROLS */
-/* PLACED OUTSIDE BLENDING EFFECT */
 
 .mini-video-controls {
   position: absolute;
@@ -545,7 +543,7 @@ summary:focus-visible {
 }
 
 /* SECOND VIDEO */
-/* LEFT NORMAL AND UNCHANGED */
+/* UNCHANGED */
 
 .demo {
   background: var(--purple);
@@ -765,8 +763,16 @@ details p {
     display: flex;
   }
 
+  /* RESPONSIVE HERO VIDEO SIZE */
+
   .hero-picture {
-    aspect-ratio: 16 / 9;
+    height: clamp(240px, 58vw, 400px);
+  }
+
+  .hero-picture > video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 
   .hero-mini-video {
